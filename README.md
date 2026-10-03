@@ -1,5 +1,7 @@
 # Tributary
 
+![The Tributary Logo](docs/logo.jpg)
+
 A ground-up open source DAW (Digital Audio Workstation) with these design goals:
 
 - A headless engine exposed by an easy to adopt API / MCP.

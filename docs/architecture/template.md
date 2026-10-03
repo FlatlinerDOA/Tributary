@@ -3,6 +3,9 @@
 - Status: Proposed
 - Recorded: YYYY-MM-DD
 - Decision state in code: Planned | Partially implemented | Implemented
+- Depends on: None
+  <!-- Or list lower-numbered ADRs this decision builds on, one line on what it uses from each:
+  - [ADR-NNNN](NNNN-title.md): what this decision uses from it. -->
 - Supersedes: None
 - Superseded by: None
 
@@ -50,10 +53,6 @@ Explain why it was not selected, including relevant benefits and costs.
 ## Review triggers
 
 - List concrete changes that require this ADR to be revisited or superseded.
-
-## Related decisions
-
-- Link related ADRs and explain the relationship.
 
 ## Notes
 
