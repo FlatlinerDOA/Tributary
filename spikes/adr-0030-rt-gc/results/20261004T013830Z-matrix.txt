@@ -1,0 +1,13 @@
+host: 4 vCPU, 6.18.44-fc-v64, seconds-per-run=120
+
+## load=0.3 rust baseline
+runtime=rust tracks=200 stages=20
+blocks=90000 xruns=329 max_late_us=14497 max_callback_us=13793 p50_us=418 p99_us=680 p99.99_us=4052 mean_load=31.8%
+
+## load=0.3 csharp isolated
+runtime=.NET 10.0.12 gc=workstation concurrent=Interactive tracks=200 stages=18 alloc-threads=0 gcmode=default
+blocks=90000 xruns=413 max_late_us=33802 max_callback_us=15077 p50_us=384 p99_us=775 p99.99_us=4016 mean_load=30.4 %
+gc0=0 gc1=0 gc2=0 total_pause_ms=0.0 suspensions=0 max_suspension_us=0
+
+## load=0.3 csharp alloc-load default
+runtime=.NET 10.0.12 gc=workstation concurrent=Interactive tracks=200 stages=18 alloc-threads=2 gcmode=default
