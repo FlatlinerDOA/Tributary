@@ -1,0 +1,49 @@
+host: 32 vCPU, 3.6.5-22c95533.x86_64, seconds-per-run=300, steal_ticks_at_start=
+
+## load=0.3 rust baseline
+runtime=rust tracks=200 stages=22
+sched_fifo_priority=50 result=unsupported-os
+blocks=225000 xruns=8 max_late_us=1387 max_callback_us=2720 p50_us=413 p99_us=500 p99.99_us=677 mean_load=31.5%
+
+## load=0.3 csharp isolated
+runtime=.NET 10.0.11 gc=workstation concurrent=Interactive tracks=200 stages=22 alloc-threads=0 gcmode=default
+sched_fifo_priority=50 result=unsupported-os
+blocks=225000 xruns=6 max_late_us=2108 max_callback_us=947 p50_us=398 p99_us=514 p99.99_us=701 mean_load=30.2%
+gc0=0 gc1=0 gc2=0 total_pause_ms=0.0 suspensions=0 max_suspension_us=0
+
+## load=0.3 csharp alloc-load default
+runtime=.NET 10.0.11 gc=workstation concurrent=Interactive tracks=200 stages=22 alloc-threads=2 gcmode=default
+sched_fifo_priority=50 result=unsupported-os
+blocks=225000 xruns=211882 max_late_us=952468 max_callback_us=12266 p50_us=438 p99_us=5939 p99.99_us=10022 mean_load=90.7%
+gc0=71098 gc1=71097 gc2=6801 total_pause_ms=184389.1 suspensions=71098 max_suspension_us=18762
+
+## load=0.3 csharp alloc-load sustained-low
+runtime=.NET 10.0.11 gc=workstation concurrent=Interactive tracks=200 stages=21 alloc-threads=2 gcmode=lowlatency
+sched_fifo_priority=50 result=unsupported-os
+blocks=225000 xruns=207164 max_late_us=474598 max_callback_us=10402 p50_us=404 p99_us=5413 p99.99_us=9767 mean_load=88.9%
+gc0=72122 gc1=72121 gc2=6849 total_pause_ms=188405.2 suspensions=72123 max_suspension_us=16345
+
+## load=0.7 rust baseline
+runtime=rust tracks=200 stages=50
+sched_fifo_priority=50 result=unsupported-os
+blocks=225000 xruns=6 max_late_us=556 max_callback_us=1594 p50_us=932 p99_us=972 p99.99_us=1123 mean_load=70.2%
+
+## load=0.7 csharp isolated
+runtime=.NET 10.0.11 gc=workstation concurrent=Interactive tracks=200 stages=49 alloc-threads=0 gcmode=default
+sched_fifo_priority=50 result=unsupported-os
+blocks=225000 xruns=14 max_late_us=2822 max_callback_us=3114 p50_us=929 p99_us=981 p99.99_us=1107 mean_load=70.3%
+gc0=0 gc1=0 gc2=0 total_pause_ms=0.0 suspensions=0 max_suspension_us=0
+
+## load=0.7 csharp alloc-load default
+runtime=.NET 10.0.11 gc=workstation concurrent=Interactive tracks=200 stages=48 alloc-threads=2 gcmode=default
+sched_fifo_priority=50 result=unsupported-os
+blocks=225000 xruns=224986 max_late_us=295137888 max_callback_us=18327 p50_us=969 p99_us=10489 p99.99_us=14755 mean_load=195.1%
+gc0=138768 gc1=138767 gc2=13158 total_pause_ms=369617.8 suspensions=138767 max_suspension_us=18390
+
+## load=0.7 csharp alloc-load sustained-low
+runtime=.NET 10.0.11 gc=workstation concurrent=Interactive tracks=200 stages=49 alloc-threads=2 gcmode=lowlatency
+sched_fifo_priority=50 result=unsupported-os
+blocks=225000 xruns=224988 max_late_us=288407835 max_callback_us=16922 p50_us=962 p99_us=10827 p99.99_us=14145 mean_load=193.0%
+gc0=142333 gc1=142332 gc2=13469 total_pause_ms=361226.7 suspensions=142332 max_suspension_us=16478
+
+steal_ticks_at_end= (USER_HZ ticks, all CPUs; virtualised hosts only)
