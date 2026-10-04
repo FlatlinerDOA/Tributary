@@ -1,5 +1,6 @@
 # 0000. Record architecture decisions
 
+- Layer: Governance
 - Status: Proposed
 - Recorded: 2026-10-03
 - Decision state in code: Implemented by this documentation set
@@ -34,15 +35,34 @@ new linked ADR rather than rewriting history.
 Retrospective records must identify themselves as retrospective and must not invent
 an original date, decider, or rationale unsupported by repository evidence.
 
-Order and link the records by dependency:
+Group the records into layers, and order and link them by dependency:
 
-- Number ADRs in dependency order: an ADR may depend only on lower-numbered ADRs.
+- Each ADR belongs to exactly one layer, stated in a `Layer` entry in its header.
+  The layer is also the first two digits of its number:
+
+  | Numbers | Layer | Concerns |
+  |---|---|---|
+  | 0000–0099 | Governance | How decisions are recorded |
+  | 0100–0199 | L0 Primitives | Platform, encoding, hashing, cryptography, identifiers |
+  | 0200–0299 | L1 Storage | Stored objects, codecs, framing, chunks |
+  | 0300–0399 | L2 Event model | Paths, aggregates, events, merging, conflicts, projections |
+  | 0400–0499 | L3 Replication | Sync, encryption in transit, bundles, the data layer library |
+  | 0500–0599 | L4 Domain model | The DAW's project model, independent of how it is played |
+  | 0600–0699 | L5 Engine | Real-time audio, graph execution, plugins, inference |
+  | 0700–0799 | L6 Host and API | The API, clients, processes and their coordination |
+  | 0800–0899 | L7 Product features | Features built on everything below |
+
+- An ADR depends only on ADRs in its own layer or a lower one. Within a layer, it
+  depends only on lower-numbered ADRs. Layers L0 to L3 know nothing about audio or
+  the DAW.
 - Each rule has exactly one owning ADR. Other ADRs link to it and never restate it.
+  A rule that spans layers is split so that each layer owns its part.
 - Each ADR lists what it builds on in a `Depends on` entry in its header, linking
-  only to lower-numbered ADRs. There are no links to higher-numbered ADRs anywhere
+  only to ADRs it may depend on. There are no links to higher-numbered ADRs anywhere
   in a record. A later concept may be mentioned in general terms, without a link.
-- A new decision takes the next free number. If an existing ADR would need to depend
-  on it, the existing ADR is superseded by a new record that does.
+- A new decision takes the next free number in its layer's range. If an existing
+  ADR would need to depend on it, the existing ADR is superseded by a new record
+  that does.
 - ADRs stand alone: they state their own context and never rely on planning
   documents outside this directory.
 
@@ -68,6 +88,12 @@ access boundary that is unnecessary for a small open-source repository.
 This is common ADR practice. It produces dense two-way links, edits to older
 records whenever a new one is added, and duplicated rules.
 
+### A single sequence in dependency order, without layers
+
+Dependency direction is still checked. Records about storage, the engine and the
+API interleave, so nothing stops a low-level record from depending on a high-level
+concern, and the cross-references grow tangled.
+
 ### Chronological numbering with an index grouped by area
 
 This keeps the order in which decisions were made. A reader still cannot tell
@@ -90,8 +116,9 @@ pointing forward.
 - Contributors must update the ADR log for architecture-affecting changes.
 - Some overlap with concise user/developer documentation is intentional.
 - Documentation review cannot by itself prove radio or hardware behavior.
-- A foundational decision found late gets a high number, or supersedes earlier
-  records.
+- A foundational decision found late takes the next number in its layer, or
+  supersedes records in its layer that would need to depend on it.
+- Each layer's range holds at most 100 records.
 - Numbers do not show the order in which decisions were made. The `Recorded`
   date does that.
 
@@ -106,6 +133,8 @@ pointing forward.
   alternatives, consequences, evidence, fitness functions, and review triggers.
 - CI check: every link of the form `NNNN-*.md` inside an ADR points to a number
   lower than the ADR's own, and every link target exists.
+- CI check: no `Depends on` entry points to a higher layer, and every `Layer` entry
+  matches the first two digits of the ADR's number.
 - New architecture-changing pull requests link an existing ADR or add a new one.
 
 ## Review triggers
@@ -120,3 +149,5 @@ pointing forward.
 - 2026-10-03: Accepted as originally written. Merged on the same day with the
   proposed dependency-ordering rules (formerly ADR-0001), which returns the record
   to `Proposed` until a human re-accepts it.
+- 2026-10-04: Returned to `Proposed`. The ordering rules now group ADRs into layers
+  with their own number ranges, and every ADR was renumbered into its layer.

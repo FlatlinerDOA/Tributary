@@ -1,20 +1,20 @@
 # Tempo adoption (feature idea)
 
 Product behaviour built on the `/tempo` aggregate. Clips are anchored to absolute
-time by default (ADR-0033), so these features change the grid and never the audio.
+time by default (ADR-0503), so these features change the grid and never the audio.
 
 ## Adopt tempo from the first recording
 
 - When the first audio clip is added to a project whose tempo no user has set, and
   the clip's tempo is known, set the tempo map from it. The tempo comes from file
-  metadata (`acid`, ADR-0015) or from detection above a confidence threshold.
+  metadata (`acid`, ADR-0502) or from detection above a confidence threshold.
 - Show the change ("Project tempo set to 93 BPM from this clip") and allow it to be
   undone.
 - Adopt only once. Later clips never change the tempo, and clips with no known
   tempo leave it untouched.
 - Skip adoption if the actor adding the clip has no `write` capability on `/tempo`
-  (ADR-0019).
-- Two peers adopting offline produce concurrent `/tempo` events, which ADR-0022
+  (ADR-0302).
+- Two peers adopting offline produce concurrent `/tempo` events, which ADR-0305
   surfaces as a conflict.
 
 ## Match project to recording
