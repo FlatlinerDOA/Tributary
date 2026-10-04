@@ -56,6 +56,7 @@ lower number, listed in its `Depends on` header entry (see
 | [0040](0040-integrate-aggregates-through-projections-and-application-operations.md) | Data model | Proposed | Keep deciders inside their aggregate; evaluate rules across aggregates in projections; clients use application operations. |
 | [0041](0041-render-and-store-graph-sections-with-explicit-filters.md) | Engine | Proposed | Render before every audio sink and store as a separate synced filter; compilation adds no nodes. |
 | [0042](0042-preview-experiments-in-local-draft-overlays.md) | Data model | Proposed | Preview experiments in local, unsynced draft overlays; commit as signed events or promote to a branch. |
+| [0043](0043-run-one-host-per-user-with-the-engine-in-its-own-process.md) | Engine | Proposed | One host per user serves all clients and owns the audio device's engine; engine in its own process except on mobile. |
 
 ## Governance
 

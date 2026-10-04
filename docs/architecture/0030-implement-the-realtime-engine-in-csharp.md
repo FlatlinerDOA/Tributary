@@ -83,6 +83,10 @@ Required before acceptance (spike):
 - [ ] The same workload in Rust as a baseline.
 - [ ] NativeAOT on iOS and Android: check startup and that it works with the audio
       callback.
+- [ ] On an iOS and an Android device, run the engine in the same process as an
+      allocating host and UI workload, because mobile apps cannot run the engine in
+      a separate process. Record xruns and the maximum GC suspension time, and
+      compare with a native real-time kernel.
 - [ ] Agree pass thresholds in advance (for example zero xruns over 8 hours at
       70% DSP load).
 
