@@ -1,6 +1,6 @@
 # 0000. Record architecture decisions
 
-- Status: Accepted
+- Status: Proposed
 - Recorded: 2026-10-03
 - Decision state in code: Implemented by this documentation set
 - Depends on: None
