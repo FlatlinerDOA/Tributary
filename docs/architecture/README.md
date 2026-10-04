@@ -46,13 +46,16 @@ lower number, listed in its `Depends on` header entry (see
 | [0030](0030-implement-the-realtime-engine-in-csharp.md) | Engine | Proposed | Write the RT engine in C#, depending on a GC spike; fall back to a Rust kernel. |
 | [0031](0031-swap-immutable-graph-snapshots-to-the-realtime-thread.md) | Engine | Proposed | Compile immutable graph snapshots from projections and swap them atomically. |
 | [0032](0032-route-realtime-gestures-through-a-fast-path.md) | Engine | Proposed | Send gestures straight to the engine; record them later as coalesced commands. |
-| [0033](0033-compose-warp-into-one-time-map-per-clip.md) | Engine | Proposed | Compose warp into one time map per clip, with a two-tier render cache. |
+| [0033](0033-compose-warp-into-one-time-map-per-clip.md) | Engine | Proposed | Anchor clips to absolute time by default; compose warp into one time map per clip, with a two-tier render cache. |
 | [0034](0034-host-clap-plugins-first-out-of-process.md) | Engine | Proposed | Host CLAP first, in sandboxed out-of-process hosts. |
 | [0035](0035-schedule-ml-inference-as-two-tier-graph-nodes.md) | Engine | Proposed | Run ML as RT CPU nodes or as frozen background GPU jobs. |
 | [0036](0036-guarantee-longevity-through-degradation-tiers.md) | Longevity | Proposed | Degrade through three longevity tiers, with print insurance. |
 | [0037](0037-deliver-generated-content-as-branch-proposals.md) | Collaboration | Proposed | Deliver generated content as branch proposals accepted by resolution events. |
 | [0038](0038-timestamp-api-messages-in-declared-clock-domains.md) | Engine | Proposed | Timestamp API messages in wall, engine or musical clock domains, with offset estimation per session. |
 | [0039](0039-generate-schemas-from-csharp-types.md) | Encoding | Proposed | Generate CBOR mappers and archived CDDL from C# types; verify with Rust and Python. |
+| [0040](0040-integrate-aggregates-through-projections-and-application-operations.md) | Data model | Proposed | Keep deciders inside their aggregate; evaluate rules across aggregates in projections; clients use application operations. |
+| [0041](0041-render-and-store-graph-sections-with-explicit-filters.md) | Engine | Proposed | Render before every audio sink and store as a separate synced filter; compilation adds no nodes. |
+| [0042](0042-preview-experiments-in-local-draft-overlays.md) | Data model | Proposed | Preview experiments in local, unsynced draft overlays; commit as signed events or promote to a branch. |
 
 ## Governance
 

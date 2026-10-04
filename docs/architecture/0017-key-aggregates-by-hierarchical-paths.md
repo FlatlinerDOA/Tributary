@@ -81,6 +81,26 @@ Invariant checks are trivial. Any two concurrent structural edits collide.
 There is little contention, but invariants that span a track or the routing graph
 have nowhere to live.
 
+### No aggregates: dynamic consistency boundaries
+
+In Dynamic Consistency Boundaries (DCB), each decision queries exactly the events
+it depends on, and its events are appended only if nothing matching that query has
+changed. Every event records its read selector, and concurrent events conflict when
+one writes what the other read. Checks that span entities (such as an edge's
+endpoint types) become ordinary decisions, and conflicts are more precise than with
+path overlap.
+
+It was rejected for three reasons:
+
+- Every command handler becomes its own consistency rule with its own read set.
+  Peers on different versions then disagree more easily about whether an event is
+  valid, and the surface that must stay compatible for decades grows.
+- Decision time has no bound. A decision folds whatever its query matches, and
+  bounding it means deciding only from declared, checkpointed state models, which
+  are aggregates under another name.
+- Conflict detection grows with DAG width times the number of read selectors, and
+  every read selector becomes permanent schema.
+
 ### Sends stored under their source track
 
 This matches how mixer UIs show sends. Cycle checking then needs an invariant over

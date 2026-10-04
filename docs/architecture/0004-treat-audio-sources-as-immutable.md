@@ -35,6 +35,10 @@ Never modify imported or recorded audio after it is stored. Represent every edit
 resolves from the original source at render time. Every transform names the
 algorithm and version that resolves it.
 
+Running a render pass over a graph section never modifies a stored source. It
+creates a new immutable source from the section's output, recording the inputs,
+algorithms and versions it was made from.
+
 ## Alternatives considered
 
 ### Destructive editing
@@ -77,3 +81,7 @@ Required before acceptance:
 
 - Storage growth becomes a common user complaint.
 - A feature needs in-place sample editing that cannot be expressed as a transform.
+
+## Notes
+
+- 2026-10-04: The Decision gained a paragraph saying that a render pass over a graph section creates a new immutable source. Consolidate, which only mixes inputs, stays a render-time transform.

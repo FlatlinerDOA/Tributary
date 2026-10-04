@@ -39,6 +39,11 @@ Unresolved questions:
   tombstones plus blob deletion, which leaves hashes that point at nothing.
 - How are named refs (branches) represented: as mutable pointers kept outside the
   DAG, as signed ref-update entries, or as per-actor namespaces?
+- What does a receiver re-check? Peers on different versions may disagree about
+  domain validation. One option is for receivers to check only rules that never
+  change (signature, capability, schema, merge rules) and trust the author's domain
+  validation. Another is for each event to name the version of the rules it was
+  validated under.
 
 ## Decision
 

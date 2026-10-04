@@ -36,8 +36,14 @@ Points to consider:
 
 Represent every warp, stretch and tempo-map effect on a clip as one composed,
 monotonic function from source time to project time, applied in a single pass over
-the original source. Use a real-time stretch for playback and swap in high-quality
-background renders when they are ready. Key cached renders by
+the original source. A clip is anchored to absolute time by default. It follows
+the tempo map only when the user anchors it to musical time, so a tempo change does
+not alter the audio of a clip anchored to absolute time. A clip whose composed
+function is the identity is not stretched. A stretch applied to audio produced from
+a new source (see [ADR-0004](0004-treat-audio-sources-as-immutable.md)) acts on that
+source, not on the original, and is not composed with earlier stretches. Use a
+real-time stretch for playback and swap in high-quality background renders when
+they are ready. Key cached renders by
 `hash(source, composed warp parameters, tempo-map segment, algorithm id and
 version)` and invalidate only the affected time ranges.
 
@@ -79,7 +85,13 @@ Required before acceptance:
   within tolerance.
 - Test: editing the tempo in bars 9 to 12 invalidates only cache entries that
   overlap those bars.
+- Test: changing the tempo map leaves the rendered audio of a clip anchored to
+  absolute time unchanged.
 
 ## Review triggers
 
 - A stretch algorithm needs per-pass state that cannot be composed.
+
+## Notes
+
+- 2026-10-04: The Decision now says that clips are anchored to absolute time by default, that a clip with an identity map is not stretched, and that a stretch applied to a newly created source is not composed with stretches applied before it.
