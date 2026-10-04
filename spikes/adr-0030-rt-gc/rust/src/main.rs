@@ -1,5 +1,20 @@
 use std::time::Instant;
 
+#[repr(C)]
+struct SchedParam { priority: i32 }
+extern "C" {
+    fn pthread_self() -> usize;
+    fn pthread_setschedparam(thread: usize, policy: i32, param: *const SchedParam) -> i32;
+}
+
+fn try_set_fifo(priority: i32) -> String {
+    if priority <= 0 { return "disabled".into(); }
+    if !cfg!(target_os = "linux") { return "unsupported-os".into(); }
+    let p = SchedParam { priority };
+    let rc = unsafe { pthread_setschedparam(pthread_self(), 1, &p) };
+    if rc == 0 { "ok".into() } else { format!("failed(errno={rc})") }
+}
+
 const BLOCK: usize = 64;
 const RATE: f64 = 48000.0;
 
@@ -85,6 +100,8 @@ fn main() {
     let mut e = Engine::new(tracks);
     let stages = e.calibrate(load * period_us);
     println!("runtime=rust tracks={tracks} stages={stages}");
+    let rt_priority: i32 = arg(&a, "rt-priority", "50").parse().unwrap();
+    println!("sched_fifo_priority={rt_priority} result={}", try_set_fifo(rt_priority));
 
     let mut hist = vec![0u64; 20_000];
     let (mut xruns, mut blocks, mut max_late, mut max_dur) = (0u64, 0u64, 0f64, 0f64);
