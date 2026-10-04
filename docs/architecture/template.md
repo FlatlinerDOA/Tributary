@@ -1,5 +1,6 @@
 # NNNN. Use a present-tense imperative decision title
 
+- Layer: Governance | L0 Primitives | L1 Storage | L2 Event model | L3 Replication | L4 Domain model | L5 Engine | L6 Host and API | L7 Product features
 - Status: Proposed
 - Recorded: YYYY-MM-DD
 - Decision state in code: Planned | Partially implemented | Implemented

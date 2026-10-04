@@ -1,7 +1,7 @@
-# ADR-0030 spike: GC suspension vs. real-time deadlines
+# ADR-0600 spike: GC suspension vs. real-time deadlines
 
 Throwaway harness for the evidence required by
-[ADR-0030](../../docs/architecture/0030-implement-the-realtime-engine-in-csharp.md).
+[ADR-0600](../../docs/architecture/0600-implement-the-realtime-engine-in-csharp.md).
 Not production code, and deliberately outside the IoC/test structure the main codebase uses.
 
 Workload (identical in `csharp/` and `rust/`): N tracks, each a sine oscillator through
@@ -35,7 +35,7 @@ Reading the output: a C#-vs-Rust gap in `xruns` / `max_late_us` at the same `mea
 runtime; a gap between `isolated` and `alloc-load` is attributable to GC suspension. `max_suspension_us` comes
 from runtime event dispatch and is approximate; trust `max_late_us` and `total_pause_ms`.
 
-## Status for ADR-0030 Evidence
+## Status for ADR-0600 Evidence
 
 - Done in container (4 shared vCPU, no RT scheduling): harness, smoke runs, 120 s matrix (see `results/`).
 - Still needed on real hardware: long soak (target 8 h), pass thresholds agreed in advance, then update the
