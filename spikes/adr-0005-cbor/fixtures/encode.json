@@ -1,0 +1,1341 @@
+{
+ "format": "tributary-cbor-fixtures/0",
+ "fixtures": [
+  {
+   "name": "int 0",
+   "value": {
+    "int": "0"
+   },
+   "expect": {
+    "cde": "00",
+    "dcbor": "00"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 1",
+   "value": {
+    "int": "1"
+   },
+   "expect": {
+    "cde": "01",
+    "dcbor": "01"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 10",
+   "value": {
+    "int": "10"
+   },
+   "expect": {
+    "cde": "0a",
+    "dcbor": "0a"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 23",
+   "value": {
+    "int": "23"
+   },
+   "expect": {
+    "cde": "17",
+    "dcbor": "17"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 24",
+   "value": {
+    "int": "24"
+   },
+   "expect": {
+    "cde": "1818",
+    "dcbor": "1818"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 25",
+   "value": {
+    "int": "25"
+   },
+   "expect": {
+    "cde": "1819",
+    "dcbor": "1819"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 100",
+   "value": {
+    "int": "100"
+   },
+   "expect": {
+    "cde": "1864",
+    "dcbor": "1864"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 255",
+   "value": {
+    "int": "255"
+   },
+   "expect": {
+    "cde": "18ff",
+    "dcbor": "18ff"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "int 256",
+   "value": {
+    "int": "256"
+   },
+   "expect": {
+    "cde": "190100",
+    "dcbor": "190100"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 1000",
+   "value": {
+    "int": "1000"
+   },
+   "expect": {
+    "cde": "1903e8",
+    "dcbor": "1903e8"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 65535",
+   "value": {
+    "int": "65535"
+   },
+   "expect": {
+    "cde": "19ffff",
+    "dcbor": "19ffff"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "int 65536",
+   "value": {
+    "int": "65536"
+   },
+   "expect": {
+    "cde": "1a00010000",
+    "dcbor": "1a00010000"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 1000000",
+   "value": {
+    "int": "1000000"
+   },
+   "expect": {
+    "cde": "1a000f4240",
+    "dcbor": "1a000f4240"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 4294967295",
+   "value": {
+    "int": "4294967295"
+   },
+   "expect": {
+    "cde": "1affffffff",
+    "dcbor": "1affffffff"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "int 4294967296",
+   "value": {
+    "int": "4294967296"
+   },
+   "expect": {
+    "cde": "1b0000000100000000",
+    "dcbor": "1b0000000100000000"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 1000000000000",
+   "value": {
+    "int": "1000000000000"
+   },
+   "expect": {
+    "cde": "1b000000e8d4a51000",
+    "dcbor": "1b000000e8d4a51000"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int 18446744073709551615",
+   "value": {
+    "int": "18446744073709551615"
+   },
+   "expect": {
+    "cde": "1bffffffffffffffff",
+    "dcbor": "1bffffffffffffffff"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int -1",
+   "value": {
+    "int": "-1"
+   },
+   "expect": {
+    "cde": "20",
+    "dcbor": "20"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int -10",
+   "value": {
+    "int": "-10"
+   },
+   "expect": {
+    "cde": "29",
+    "dcbor": "29"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int -24",
+   "value": {
+    "int": "-24"
+   },
+   "expect": {
+    "cde": "37"
+   },
+   "source": "derived (RFC 8949 \u00a73.1)"
+  },
+  {
+   "name": "int -25",
+   "value": {
+    "int": "-25"
+   },
+   "expect": {
+    "cde": "3818"
+   },
+   "source": "derived (RFC 8949 \u00a73.1)"
+  },
+  {
+   "name": "int -100",
+   "value": {
+    "int": "-100"
+   },
+   "expect": {
+    "cde": "3863",
+    "dcbor": "3863"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int -1000",
+   "value": {
+    "int": "-1000"
+   },
+   "expect": {
+    "cde": "3903e7",
+    "dcbor": "3903e7"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "int -9223372036854775808",
+   "value": {
+    "int": "-9223372036854775808"
+   },
+   "expect": {
+    "cde": "3b7fffffffffffffff",
+    "dcbor": "3b7fffffffffffffff"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "int -2^64",
+   "value": {
+    "int": "-18446744073709551616"
+   },
+   "expect": {
+    "cde": "3bffffffffffffffff"
+   },
+   "source": "RFC 8949 Appendix A",
+   "note": "dCBOR rejects 65-bit negative integers (Table 4)."
+  },
+  {
+   "name": "float 0.0",
+   "value": {
+    "float": "0000000000000000"
+   },
+   "expect": {
+    "cde": "f90000",
+    "dcbor": "00"
+   },
+   "source": "RFC 8949 Appendix A; draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float -0.0",
+   "value": {
+    "float": "8000000000000000"
+   },
+   "expect": {
+    "cde": "f98000",
+    "dcbor": "00"
+   },
+   "source": "RFC 8949 Appendix A; draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 1.0",
+   "value": {
+    "float": "3ff0000000000000"
+   },
+   "expect": {
+    "cde": "f93c00",
+    "dcbor": "01"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "float 1.1",
+   "value": {
+    "float": "3ff199999999999a"
+   },
+   "expect": {
+    "cde": "fb3ff199999999999a",
+    "dcbor": "fb3ff199999999999a"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "float 1.5",
+   "value": {
+    "float": "3ff8000000000000"
+   },
+   "expect": {
+    "cde": "f93e00",
+    "dcbor": "f93e00"
+   },
+   "source": "RFC 8949 Appendix A; draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 65504.0",
+   "value": {
+    "float": "40effc0000000000"
+   },
+   "expect": {
+    "cde": "f97bff",
+    "dcbor": "19ffe0"
+   },
+   "source": "RFC 8949 Appendix A; draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 100000.0",
+   "value": {
+    "float": "40f86a0000000000"
+   },
+   "expect": {
+    "cde": "fa47c35000"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "float 3.4028234663852886e+38",
+   "value": {
+    "float": "47efffffe0000000"
+   },
+   "expect": {
+    "cde": "fa7f7fffff",
+    "dcbor": "fa7f7fffff"
+   },
+   "source": "RFC 8949 Appendix A; draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 1e+300",
+   "value": {
+    "float": "7e37e43c8800759c"
+   },
+   "expect": {
+    "cde": "fb7e37e43c8800759c"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "float 5.960464477539063e-08",
+   "value": {
+    "float": "3e70000000000000"
+   },
+   "expect": {
+    "cde": "f90001",
+    "dcbor": "f90001"
+   },
+   "source": "RFC 8949 Appendix A; draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 6.103515625e-05",
+   "value": {
+    "float": "3f10000000000000"
+   },
+   "expect": {
+    "cde": "f90400",
+    "dcbor": "f90400"
+   },
+   "source": "RFC 8949 Appendix A; draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float -4.0",
+   "value": {
+    "float": "c010000000000000"
+   },
+   "expect": {
+    "cde": "f9c400"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "float -4.1",
+   "value": {
+    "float": "c010666666666666"
+   },
+   "expect": {
+    "cde": "fbc010666666666666"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "float inf",
+   "value": {
+    "float": "7ff0000000000000"
+   },
+   "expect": {
+    "cde": "f97c00",
+    "dcbor": "f97c00"
+   },
+   "source": "RFC 8949 Appendix A; draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float -inf",
+   "value": {
+    "float": "fff0000000000000"
+   },
+   "expect": {
+    "cde": "f9fc00",
+    "dcbor": "f9fc00"
+   },
+   "source": "RFC 8949 Appendix A; draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 2345678.25",
+   "value": {
+    "float": "4141e56720000000"
+   },
+   "expect": {
+    "dcbor": "fa4a0f2b39"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 1.2",
+   "value": {
+    "float": "3ff3333333333333"
+   },
+   "expect": {
+    "dcbor": "fb3ff3333333333333"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 42.0",
+   "value": {
+    "float": "4045000000000000"
+   },
+   "expect": {
+    "dcbor": "182a"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 2345678.0",
+   "value": {
+    "float": "4141e56700000000"
+   },
+   "expect": {
+    "dcbor": "1a0023cace"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float -2345678.0",
+   "value": {
+    "float": "c141e56700000000"
+   },
+   "expect": {
+    "dcbor": "3a0023cacd"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 1.401298464324817e-45",
+   "value": {
+    "float": "36a0000000000000"
+   },
+   "expect": {
+    "dcbor": "fa00000001"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 5e-324",
+   "value": {
+    "float": "0000000000000001"
+   },
+   "expect": {
+    "dcbor": "fb0000000000000001"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 2.2250738585072014e-308",
+   "value": {
+    "float": "0010000000000000"
+   },
+   "expect": {
+    "dcbor": "fb0010000000000000"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 33554430.0",
+   "value": {
+    "float": "417fffffe0000000"
+   },
+   "expect": {
+    "dcbor": "1a01fffffe"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float -9.223372036854775e+18",
+   "value": {
+    "float": "c3dfffffffffffff"
+   },
+   "expect": {
+    "dcbor": "3b7ffffffffffffbff"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 1.844674407370955e+19",
+   "value": {
+    "float": "43efffffffffffff"
+   },
+   "expect": {
+    "dcbor": "1bfffffffffffff800"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 1.8446744073709552e+19",
+   "value": {
+    "float": "43f0000000000000"
+   },
+   "expect": {
+    "dcbor": "fa5f800000"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float -1.8446742974197924e+19",
+   "value": {
+    "float": "c3efffffe0000000"
+   },
+   "expect": {
+    "dcbor": "fadf7fffff"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 3.402823466385289e+38",
+   "value": {
+    "float": "47efffffe0000001"
+   },
+   "expect": {
+    "dcbor": "fb47efffffe0000001"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 1.7976931348623157e+308",
+   "value": {
+    "float": "7fefffffffffffff"
+   },
+   "expect": {
+    "dcbor": "fb7fefffffffffffff"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3"
+  },
+  {
+   "name": "float 12.0",
+   "value": {
+    "float": "4028000000000000"
+   }
+  },
+  {
+   "name": "float -9.223372036854776e+18",
+   "value": {
+    "float": "c3e0000000000000"
+   },
+   "expect": {
+    "dcbor": "3b7fffffffffffffff"
+   },
+   "source": "derived (dCBOR \u00a72.3, DCBOR_INT lower bound)"
+  },
+  {
+   "name": "float NaN 7ff8000000000000",
+   "value": {
+    "float": "7ff8000000000000"
+   },
+   "expect": {
+    "cde": "f97e00",
+    "dcbor": "f97e00"
+   },
+   "source": "RFC 8949 Appendix A; draft-mcnally-deterministic-cbor-12 Table 3",
+   "note": "quiet NaN, zero payload"
+  },
+  {
+   "name": "float NaN fff8000000000000",
+   "value": {
+    "float": "fff8000000000000"
+   },
+   "expect": {
+    "dcbor": "f97e00"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3",
+   "note": "negative quiet NaN"
+  },
+  {
+   "name": "float NaN 7ff8000000000001",
+   "value": {
+    "float": "7ff8000000000001"
+   },
+   "expect": {
+    "dcbor": "f97e00"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3",
+   "note": "NaN payload in low bits (cannot shorten)"
+  },
+  {
+   "name": "float NaN 7ff8000020000000",
+   "value": {
+    "float": "7ff8000020000000"
+   },
+   "expect": {
+    "dcbor": "f97e00"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3",
+   "note": "NaN payload that fits binary32"
+  },
+  {
+   "name": "float NaN 7ff0000000000001",
+   "value": {
+    "float": "7ff0000000000001"
+   },
+   "expect": {
+    "dcbor": "f97e00"
+   },
+   "source": "draft-mcnally-deterministic-cbor-12 Table 3",
+   "note": "signalling NaN"
+  },
+  {
+   "name": "text empty",
+   "value": {
+    "text": ""
+   },
+   "expect": {
+    "cde": "60",
+    "dcbor": "60"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "text a",
+   "value": {
+    "text": "a"
+   },
+   "expect": {
+    "cde": "6161",
+    "dcbor": "6161"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "text IETF",
+   "value": {
+    "text": "IETF"
+   },
+   "expect": {
+    "cde": "6449455446",
+    "dcbor": "6449455446"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "text u00fc",
+   "value": {
+    "text": "\u00fc"
+   },
+   "expect": {
+    "cde": "62c3bc",
+    "dcbor": "62c3bc"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "text u6c34",
+   "value": {
+    "text": "\u6c34"
+   },
+   "expect": {
+    "cde": "63e6b0b4",
+    "dcbor": "63e6b0b4"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "text U+10151",
+   "value": {
+    "text": "\ud800\udd51"
+   },
+   "expect": {
+    "cde": "64f0908591",
+    "dcbor": "64f0908591"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "text non-NFC e+U+0301",
+   "value": {
+    "text": "e\u0301"
+   },
+   "expect": {
+    "cde": "6365cc81"
+   },
+   "source": "derived (RFC 8949 \u00a73.1)",
+   "note": "dCBOR requires NFC; an encoder must refuse or normalize to 62c3a9."
+  },
+  {
+   "name": "bytes empty",
+   "value": {
+    "bytes": ""
+   },
+   "expect": {
+    "cde": "40",
+    "dcbor": "40"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "bytes 01020304",
+   "value": {
+    "bytes": "01020304"
+   },
+   "expect": {
+    "cde": "4401020304",
+    "dcbor": "4401020304"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "false",
+   "value": {
+    "bool": false
+   },
+   "expect": {
+    "cde": "f4",
+    "dcbor": "f4"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "true",
+   "value": {
+    "bool": true
+   },
+   "expect": {
+    "cde": "f5",
+    "dcbor": "f5"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "null",
+   "value": {
+    "null": true
+   },
+   "expect": {
+    "cde": "f6",
+    "dcbor": "f6"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "array empty",
+   "value": {
+    "array": []
+   },
+   "expect": {
+    "cde": "80",
+    "dcbor": "80"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "array nested",
+   "value": {
+    "array": [
+     {
+      "int": "1"
+     },
+     {
+      "array": [
+       {
+        "int": "2"
+       },
+       {
+        "int": "3"
+       }
+      ]
+     },
+     {
+      "array": [
+       {
+        "int": "4"
+       },
+       {
+        "int": "5"
+       }
+      ]
+     }
+    ]
+   },
+   "expect": {
+    "cde": "8301820203820405",
+    "dcbor": "8301820203820405"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "array 25 items",
+   "value": {
+    "array": [
+     {
+      "int": "1"
+     },
+     {
+      "int": "2"
+     },
+     {
+      "int": "3"
+     },
+     {
+      "int": "4"
+     },
+     {
+      "int": "5"
+     },
+     {
+      "int": "6"
+     },
+     {
+      "int": "7"
+     },
+     {
+      "int": "8"
+     },
+     {
+      "int": "9"
+     },
+     {
+      "int": "10"
+     },
+     {
+      "int": "11"
+     },
+     {
+      "int": "12"
+     },
+     {
+      "int": "13"
+     },
+     {
+      "int": "14"
+     },
+     {
+      "int": "15"
+     },
+     {
+      "int": "16"
+     },
+     {
+      "int": "17"
+     },
+     {
+      "int": "18"
+     },
+     {
+      "int": "19"
+     },
+     {
+      "int": "20"
+     },
+     {
+      "int": "21"
+     },
+     {
+      "int": "22"
+     },
+     {
+      "int": "23"
+     },
+     {
+      "int": "24"
+     },
+     {
+      "int": "25"
+     }
+    ]
+   },
+   "expect": {
+    "cde": "98190102030405060708090a0b0c0d0e0f101112131415161718181819"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "map empty",
+   "value": {
+    "map": []
+   },
+   "expect": {
+    "cde": "a0",
+    "dcbor": "a0"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "tag 1 epoch int",
+   "value": {
+    "tag": "1",
+    "item": {
+     "int": "1363896240"
+    }
+   },
+   "expect": {
+    "cde": "c11a514b67b0",
+    "dcbor": "c11a514b67b0"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "tag 1 epoch float",
+   "value": {
+    "tag": "1",
+    "item": {
+     "float": "41d452d9ec200000"
+    }
+   },
+   "expect": {
+    "cde": "c1fb41d452d9ec200000",
+    "dcbor": "c1fb41d452d9ec200000"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "tag 32 uri",
+   "value": {
+    "tag": "32",
+    "item": {
+     "text": "http://www.example.com"
+    }
+   },
+   "expect": {
+    "cde": "d82076687474703a2f2f7777772e6578616d706c652e636f6d"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "map uint keys reversed",
+   "value": {
+    "map": [
+     [
+      {
+       "int": "3"
+      },
+      {
+       "int": "4"
+      }
+     ],
+     [
+      {
+       "int": "1"
+      },
+      {
+       "int": "2"
+      }
+     ]
+    ]
+   },
+   "expect": {
+    "cde": "a201020304",
+    "dcbor": "a201020304"
+   },
+   "source": "RFC 8949 Appendix A",
+   "note": "{1: 2, 3: 4} described as {3: 4, 1: 2}"
+  },
+  {
+   "name": "map text keys reversed",
+   "value": {
+    "map": [
+     [
+      {
+       "text": "e"
+      },
+      {
+       "text": "E"
+      }
+     ],
+     [
+      {
+       "text": "d"
+      },
+      {
+       "text": "D"
+      }
+     ],
+     [
+      {
+       "text": "c"
+      },
+      {
+       "text": "C"
+      }
+     ],
+     [
+      {
+       "text": "b"
+      },
+      {
+       "text": "B"
+      }
+     ],
+     [
+      {
+       "text": "a"
+      },
+      {
+       "text": "A"
+      }
+     ]
+    ]
+   },
+   "expect": {
+    "cde": "a56161614161626142616361436164614461656145",
+    "dcbor": "a56161614161626142616361436164614461656145"
+   },
+   "source": "RFC 8949 Appendix A"
+  },
+  {
+   "name": "map uint keys spanning header sizes",
+   "value": {
+    "map": [
+     [
+      {
+       "int": "1000"
+      },
+      {
+       "int": "0"
+      }
+     ],
+     [
+      {
+       "int": "24"
+      },
+      {
+       "int": "0"
+      }
+     ],
+     [
+      {
+       "int": "23"
+      },
+      {
+       "int": "0"
+      }
+     ],
+     [
+      {
+       "int": "0"
+      },
+      {
+       "int": "0"
+      }
+     ]
+    ]
+   },
+   "expect": {
+    "cde": "a4000017001818001903e800"
+   },
+   "source": "derived (RFC 8949 \u00a74.2.1)",
+   "note": "Non-negative integer keys: bytewise and length-first orders agree."
+  },
+  {
+   "name": "map 24 vs -1 (orders disagree)",
+   "value": {
+    "map": [
+     [
+      {
+       "int": "-1"
+      },
+      {
+       "int": "0"
+      }
+     ],
+     [
+      {
+       "int": "24"
+      },
+      {
+       "int": "0"
+      }
+     ]
+    ]
+   },
+   "expect": {
+    "cde": "a21818002000",
+    "dcbor": "a21818002000"
+   },
+   "source": "derived (RFC 8949 \u00a74.2.1)",
+   "note": "Bytewise: 24 (0x1818) < -1 (0x20). RFC 7049 length-first would give a22000181800."
+  },
+  {
+   "name": "map 256 vs \"a\" (orders disagree)",
+   "value": {
+    "map": [
+     [
+      {
+       "text": "a"
+      },
+      {
+       "int": "0"
+      }
+     ],
+     [
+      {
+       "int": "256"
+      },
+      {
+       "int": "0"
+      }
+     ]
+    ]
+   },
+   "expect": {
+    "cde": "a219010000616100",
+    "dcbor": "a219010000616100"
+   },
+   "source": "derived (RFC 8949 \u00a74.2.1)",
+   "note": "Bytewise: 256 (0x190100) < \"a\" (0x6161). Length-first would put \"a\" first."
+  },
+  {
+   "name": "map mixed key types",
+   "value": {
+    "map": [
+     [
+      {
+       "text": "a"
+      },
+      {
+       "int": "0"
+      }
+     ],
+     [
+      {
+       "int": "-1"
+      },
+      {
+       "int": "0"
+      }
+     ],
+     [
+      {
+       "int": "10"
+      },
+      {
+       "int": "0"
+      }
+     ],
+     [
+      {
+       "bytes": "00"
+      },
+      {
+       "int": "0"
+      }
+     ]
+    ]
+   },
+   "expect": {
+    "cde": "a40a002000410000616100",
+    "dcbor": "a40a002000410000616100"
+   },
+   "source": "derived (RFC 8949 \u00a74.2.1)"
+  },
+  {
+   "name": "map nested unsorted",
+   "value": {
+    "map": [
+     [
+      {
+       "text": "b"
+      },
+      {
+       "map": [
+        [
+         {
+          "int": "2"
+         },
+         {
+          "int": "0"
+         }
+        ],
+        [
+         {
+          "int": "1"
+         },
+         {
+          "int": "0"
+         }
+        ]
+       ]
+      }
+     ],
+     [
+      {
+       "text": "a"
+      },
+      {
+       "int": "1"
+      }
+     ]
+    ]
+   },
+   "expect": {
+    "cde": "a26161016162a201000200",
+    "dcbor": "a26161016162a201000200"
+   },
+   "source": "derived (RFC 8949 \u00a74.2.1)"
+  },
+  {
+   "name": "event envelope",
+   "value": {
+    "map": [
+     [
+      {
+       "int": "4"
+      },
+      {
+       "array": [
+        {
+         "map": [
+          [
+           {
+            "int": "1"
+           },
+           {
+            "text": "track/0190a3c1d2e47a8b9c0d1e2f3a4b5c6d/gain"
+           }
+          ],
+          [
+           {
+            "int": "0"
+           },
+           {
+            "int": "3"
+           }
+          ],
+          [
+           {
+            "int": "2"
+           },
+           {
+            "float": "c018000000000000"
+           }
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     [
+      {
+       "int": "0"
+      },
+      {
+       "int": "1"
+      }
+     ],
+     [
+      {
+       "int": "3"
+      },
+      {
+       "int": "1760000000000"
+      }
+     ],
+     [
+      {
+       "int": "1"
+      },
+      {
+       "bytes": "1220abababababababababababababababababababababababababababababababab"
+      }
+     ],
+     [
+      {
+       "int": "2"
+      },
+      {
+       "array": [
+        {
+         "bytes": "12200101010101010101010101010101010101010101010101010101010101010101"
+        },
+        {
+         "bytes": "12200202020202020202020202020202020202020202020202020202020202020202"
+        }
+       ]
+      }
+     ],
+     [
+      {
+       "int": "5"
+      },
+      {
+       "float": "3fe0000000000000"
+      }
+     ]
+    ]
+   },
+   "note": "Representative record: integer keys out of order, nested map, multihash byte strings, integral float -6.0 (dCBOR reduces to -6)."
+  }
+ ]
+}

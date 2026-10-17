@@ -81,15 +81,44 @@ Available:
 
 - [RFC 8949](https://www.rfc-editor.org/rfc/rfc8949) §4.2;
   [RFC 8610](https://www.rfc-editor.org/rfc/rfc8610) (CDDL).
+- Spike: [`spikes/adr-0005-cbor/`](../../spikes/adr-0005-cbor/), with the full
+  comparison in [`results/report.md`](../../spikes/adr-0005-cbor/results/report.md).
+  It encodes 89 fixtures and 29 decoder cases with `System.Formats.Cbor` 10.0.0,
+  `cbor2` 6.1.5, `ciborium` 0.2.2 and `dcbor` 0.25.2. They are checked against a
+  reference encoder that reproduces every vector published in RFC 8949 Appendix A
+  and draft-mcnally-deterministic-cbor-12. The results are reproducible byte for byte.
 
 Required before acceptance:
 
-- [ ] Find out and document the key-ordering rule that `System.Formats.Cbor`'s
+- [x] Find out and document the key-ordering rule that `System.Formats.Cbor`'s
       conformance modes enforce, and whether they reject non-deterministic input.
+      - `Canonical` sorts keys length-first (RFC 7049 §3.9), not bytewise, and its
+        reader rejects the RFC 8949 order. `Ctap2Canonical` sorts bytewise but
+        rejects tags. The two orders agree when every key in a map has the same
+        major type. They differ only across major types (for example `24` and `-1`).
+      - `Canonical` and `Ctap2Canonical` readers reject unsorted and duplicate keys,
+        non-shortest integers and lengths, and indefinite lengths. No mode rejects
+        non-preferred floats: 1.5 encoded as binary64 is accepted. The
+        "readers reject non-conforming input" rule therefore needs a float check
+        on top of the library.
+      - In every mode except `Ctap2Canonical`, `WriteDouble` writes the shortest
+        exact float and writes every NaN as `f97e00`.
 - [ ] Choose a float profile (plain §4.2.1, CDE or dCBOR) and record why.
+      Data for the choice:
+      - CDE keeps -0.0 and NaN payloads, and leaves integral floats as floats.
+        `ciborium` with keys sorted by hand matches CDE on every fixture. The
+        `System.Formats.Cbor` writer differs from CDE only on NaN, which it
+        canonicalises.
+      - dCBOR reduces integral floats to integers, so a `double` field must decode
+        from an integer. It also canonicalises NaN, requires NFC text, and limits
+        negative integers to -2^63. Only one implementation was found (`dcbor`),
+        and it departs from draft-12 on the lower integer bound.
+      - A third option is CDE, with NaN either rejected or written only as
+        `f97e00`. That matches the .NET writer.
 - [ ] Encode a fixture set with Tributary and with at least one independent
       implementation (for example Python `cbor2` or Rust `ciborium`) and compare
-      the bytes.
+      the bytes. The fixture set, the reference encoder and harnesses for three
+      independent implementations exist. The Tributary encoder does not exist yet.
 
 ## Fitness functions
 

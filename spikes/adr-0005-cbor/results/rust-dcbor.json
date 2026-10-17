@@ -1,0 +1,362 @@
+{
+  "decode": {
+    "-0.0": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "1.5 as binary32": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "1.5 as binary64": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "Infinity as binary64": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "NaN as binary64": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "NaN with payload f97e01": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "NaN with payload faffc00001": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "bytewise order {24, -1}": {
+      "dcbor try_from_data": "accept"
+    },
+    "bytewise order {256, \"a\"}": {
+      "dcbor try_from_data": "accept"
+    },
+    "control: sorted uint map": {
+      "dcbor try_from_data": "accept"
+    },
+    "duplicate keys": {
+      "dcbor try_from_data": "reject: the decoded CBOR map has a duplicate key"
+    },
+    "indefinite array": {
+      "dcbor try_from_data": "reject: unsupported value in CBOR header"
+    },
+    "indefinite map": {
+      "dcbor try_from_data": "reject: unsupported value in CBOR header"
+    },
+    "indefinite text": {
+      "dcbor try_from_data": "reject: unsupported value in CBOR header"
+    },
+    "int -2^64": {
+      "dcbor try_from_data": "accept"
+    },
+    "integral float 12.0": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "invalid UTF-8 text": {
+      "dcbor try_from_data": "reject: invalid UTF‑8 string: invalid utf-8 sequence of 1 bytes from index 0"
+    },
+    "length-first order {\"a\", 256}": {
+      "dcbor try_from_data": "reject: the decoded CBOR map has keys that are not in canonical order"
+    },
+    "length-first order {-1, 24}": {
+      "dcbor try_from_data": "reject: the decoded CBOR map has keys that are not in canonical order"
+    },
+    "non-NFC text e+U+0301": {
+      "dcbor try_from_data": "reject: a CBOR string was not encoded in Unicode Canonical Normalization Form C"
+    },
+    "non-shortest int 0x1805": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "non-shortest int 0x190005": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "non-shortest length h'01' as 0x5801": {
+      "dcbor try_from_data": "reject: a CBOR numeric value was encoded in non-canonical form"
+    },
+    "simple(16)": {
+      "dcbor try_from_data": "reject: an invalid CBOR simple value was encountered"
+    },
+    "tag 1 epoch int": {
+      "dcbor try_from_data": "accept"
+    },
+    "trailing bytes after item": {
+      "dcbor try_from_data": "reject: the decoded CBOR had 1 extra bytes at the end"
+    },
+    "truncated item": {
+      "dcbor try_from_data": "reject: early end of CBOR data"
+    },
+    "undefined": {
+      "dcbor try_from_data": "reject: an invalid CBOR simple value was encountered"
+    },
+    "unsorted uint keys": {
+      "dcbor try_from_data": "reject: the decoded CBOR map has keys that are not in canonical order"
+    }
+  },
+  "encode": {
+    "array 25 items": {
+      "dcbor": "98190102030405060708090a0b0c0d0e0f101112131415161718181819"
+    },
+    "array empty": {
+      "dcbor": "80"
+    },
+    "array nested": {
+      "dcbor": "8301820203820405"
+    },
+    "bytes 01020304": {
+      "dcbor": "4401020304"
+    },
+    "bytes empty": {
+      "dcbor": "40"
+    },
+    "event envelope": {
+      "dcbor": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e022505f93800"
+    },
+    "false": {
+      "dcbor": "f4"
+    },
+    "float -0.0": {
+      "dcbor": "00"
+    },
+    "float -1.8446742974197924e+19": {
+      "dcbor": "3bfffffeffffffffff"
+    },
+    "float -2345678.0": {
+      "dcbor": "3a0023cacd"
+    },
+    "float -4.0": {
+      "dcbor": "23"
+    },
+    "float -4.1": {
+      "dcbor": "fbc010666666666666"
+    },
+    "float -9.223372036854775e+18": {
+      "dcbor": "3b7ffffffffffffbff"
+    },
+    "float -9.223372036854776e+18": {
+      "dcbor": "3b7fffffffffffffff"
+    },
+    "float -inf": {
+      "dcbor": "f9fc00"
+    },
+    "float 0.0": {
+      "dcbor": "00"
+    },
+    "float 1.0": {
+      "dcbor": "01"
+    },
+    "float 1.1": {
+      "dcbor": "fb3ff199999999999a"
+    },
+    "float 1.2": {
+      "dcbor": "fb3ff3333333333333"
+    },
+    "float 1.401298464324817e-45": {
+      "dcbor": "fa00000001"
+    },
+    "float 1.5": {
+      "dcbor": "f93e00"
+    },
+    "float 1.7976931348623157e+308": {
+      "dcbor": "fb7fefffffffffffff"
+    },
+    "float 1.8446744073709552e+19": {
+      "dcbor": "fa5f800000"
+    },
+    "float 1.844674407370955e+19": {
+      "dcbor": "1bfffffffffffff800"
+    },
+    "float 100000.0": {
+      "dcbor": "1a000186a0"
+    },
+    "float 12.0": {
+      "dcbor": "0c"
+    },
+    "float 1e+300": {
+      "dcbor": "fb7e37e43c8800759c"
+    },
+    "float 2.2250738585072014e-308": {
+      "dcbor": "fb0010000000000000"
+    },
+    "float 2345678.0": {
+      "dcbor": "1a0023cace"
+    },
+    "float 2345678.25": {
+      "dcbor": "fa4a0f2b39"
+    },
+    "float 3.4028234663852886e+38": {
+      "dcbor": "fa7f7fffff"
+    },
+    "float 3.402823466385289e+38": {
+      "dcbor": "fb47efffffe0000001"
+    },
+    "float 33554430.0": {
+      "dcbor": "1a01fffffe"
+    },
+    "float 42.0": {
+      "dcbor": "182a"
+    },
+    "float 5.960464477539063e-08": {
+      "dcbor": "f90001"
+    },
+    "float 5e-324": {
+      "dcbor": "fb0000000000000001"
+    },
+    "float 6.103515625e-05": {
+      "dcbor": "f90400"
+    },
+    "float 65504.0": {
+      "dcbor": "19ffe0"
+    },
+    "float NaN 7ff0000000000001": {
+      "dcbor": "f97e00"
+    },
+    "float NaN 7ff8000000000000": {
+      "dcbor": "f97e00"
+    },
+    "float NaN 7ff8000000000001": {
+      "dcbor": "f97e00"
+    },
+    "float NaN 7ff8000020000000": {
+      "dcbor": "f97e00"
+    },
+    "float NaN fff8000000000000": {
+      "dcbor": "f97e00"
+    },
+    "float inf": {
+      "dcbor": "f97c00"
+    },
+    "int -1": {
+      "dcbor": "20"
+    },
+    "int -10": {
+      "dcbor": "29"
+    },
+    "int -100": {
+      "dcbor": "3863"
+    },
+    "int -1000": {
+      "dcbor": "3903e7"
+    },
+    "int -24": {
+      "dcbor": "37"
+    },
+    "int -25": {
+      "dcbor": "3818"
+    },
+    "int -2^64": {
+      "dcbor": "3bffffffffffffffff"
+    },
+    "int -9223372036854775808": {
+      "dcbor": "3b7fffffffffffffff"
+    },
+    "int 0": {
+      "dcbor": "00"
+    },
+    "int 1": {
+      "dcbor": "01"
+    },
+    "int 10": {
+      "dcbor": "0a"
+    },
+    "int 100": {
+      "dcbor": "1864"
+    },
+    "int 1000": {
+      "dcbor": "1903e8"
+    },
+    "int 1000000": {
+      "dcbor": "1a000f4240"
+    },
+    "int 1000000000000": {
+      "dcbor": "1b000000e8d4a51000"
+    },
+    "int 18446744073709551615": {
+      "dcbor": "1bffffffffffffffff"
+    },
+    "int 23": {
+      "dcbor": "17"
+    },
+    "int 24": {
+      "dcbor": "1818"
+    },
+    "int 25": {
+      "dcbor": "1819"
+    },
+    "int 255": {
+      "dcbor": "18ff"
+    },
+    "int 256": {
+      "dcbor": "190100"
+    },
+    "int 4294967295": {
+      "dcbor": "1affffffff"
+    },
+    "int 4294967296": {
+      "dcbor": "1b0000000100000000"
+    },
+    "int 65535": {
+      "dcbor": "19ffff"
+    },
+    "int 65536": {
+      "dcbor": "1a00010000"
+    },
+    "map 24 vs -1 (orders disagree)": {
+      "dcbor": "a21818002000"
+    },
+    "map 256 vs \"a\" (orders disagree)": {
+      "dcbor": "a219010000616100"
+    },
+    "map empty": {
+      "dcbor": "a0"
+    },
+    "map mixed key types": {
+      "dcbor": "a40a002000410000616100"
+    },
+    "map nested unsorted": {
+      "dcbor": "a26161016162a201000200"
+    },
+    "map text keys reversed": {
+      "dcbor": "a56161614161626142616361436164614461656145"
+    },
+    "map uint keys reversed": {
+      "dcbor": "a201020304"
+    },
+    "map uint keys spanning header sizes": {
+      "dcbor": "a4000017001818001903e800"
+    },
+    "null": {
+      "dcbor": "f6"
+    },
+    "tag 1 epoch float": {
+      "dcbor": "c1fb41d452d9ec200000"
+    },
+    "tag 1 epoch int": {
+      "dcbor": "c11a514b67b0"
+    },
+    "tag 32 uri": {
+      "dcbor": "d82076687474703a2f2f7777772e6578616d706c652e636f6d"
+    },
+    "text IETF": {
+      "dcbor": "6449455446"
+    },
+    "text U+10151": {
+      "dcbor": "64f0908591"
+    },
+    "text a": {
+      "dcbor": "6161"
+    },
+    "text empty": {
+      "dcbor": "60"
+    },
+    "text non-NFC e+U+0301": {
+      "dcbor": "62c3a9"
+    },
+    "text u00fc": {
+      "dcbor": "62c3bc"
+    },
+    "text u6c34": {
+      "dcbor": "63e6b0b4"
+    },
+    "true": {
+      "dcbor": "f5"
+    }
+  },
+  "impl": "rust dcbor",
+  "version": "0.25.2"
+}

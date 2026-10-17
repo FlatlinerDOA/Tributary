@@ -1,0 +1,39 @@
+{
+ "impl": "python pycddl",
+ "version": "0.6.4",
+ "validate": {
+  "envelope, CDE bytes": {
+   "envelope (float)": "valid",
+   "envelope (float64)": "valid",
+   "envelope (float, literal keys)": "valid"
+  },
+  "envelope, floats forced to binary64": {
+   "envelope (float)": "valid",
+   "envelope (float64)": "valid",
+   "envelope (float, literal keys)": "valid"
+  },
+  "envelope, path not canonical": {
+   "envelope (float)": "valid",
+   "envelope (float64)": "valid",
+   "envelope (float, literal keys)": "valid"
+  },
+  "envelope, id wrong size": {
+   "envelope (float)": "invalid: ValidationError: error validating at cbor location /1: expected \"[18, 52, 86]\" .size 34, got 3\n",
+   "envelope (float64)": "invalid: ValidationError: error validating at cbor location /1: expected \"[18, 52, 86]\" .size 34, got 3\n",
+   "envelope (float, literal keys)": "invalid: ValidationError: error validating at cbor location /1: expected \"[18, 52, 86]\" .size 34, got 3\n"
+  },
+  "envelope, unknown key 6": {
+   "envelope (float)": "invalid: ValidationError: error validating at cbor location : unexpected key Integer(Integer(6))\n",
+   "envelope (float64)": "invalid: ValidationError: error validating at cbor location : unexpected key Integer(Integer(6))\n",
+   "envelope (float, literal keys)": "invalid: ValidationError: error validating at cbor location : unexpected key Integer(Integer(6))\n"
+  }
+ },
+ "probes": {
+  ".regexp is anchored": "valid",
+  ".regexp anchored explicitly": "invalid: ValidationError: error validating at cbor location : expected \"aBC\" to match regex \"^[a-z]+$\"\n",
+  "float64 rejects binary16": "valid",
+  "float16 rejects binary64": "valid",
+  "uint rejects text": "invalid: ValidationError: error validating at cbor location : expected type uint, got Text(\"x\")\n",
+  "named key constant": "valid"
+ }
+}

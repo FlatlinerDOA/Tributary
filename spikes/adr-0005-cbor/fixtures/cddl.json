@@ -1,0 +1,104 @@
+{
+ "format": "tributary-cddl-cases/0",
+ "schemas": {
+  "envelope (float)": "event-envelope = {\n  k-version => uint,\n  k-id => multihash,\n  k-parents => [* multihash],\n  k-time => uint,\n  k-ops => [* op],\n  k-weight => float,\n}\nop = { k-op-kind => uint, k-op-path => path, k-op-value => float }\n\nk-version = 0\nk-id = 1\nk-parents = 2\nk-time = 3\nk-ops = 4\nk-weight = 5\nmultihash = bstr .size 34\npath = tstr .regexp \"[a-z0-9._-]{1,64}(/[a-z0-9._-]{1,64})*\"\nk-op-kind = 0\nk-op-path = 1\nk-op-value = 2\n",
+  "envelope (float64)": "event-envelope = {\n  k-version => uint,\n  k-id => multihash,\n  k-parents => [* multihash],\n  k-time => uint,\n  k-ops => [* op],\n  k-weight => float64,\n}\nop = { k-op-kind => uint, k-op-path => path, k-op-value => float64 }\n\nk-version = 0\nk-id = 1\nk-parents = 2\nk-time = 3\nk-ops = 4\nk-weight = 5\nmultihash = bstr .size 34\npath = tstr .regexp \"[a-z0-9._-]{1,64}(/[a-z0-9._-]{1,64})*\"\nk-op-kind = 0\nk-op-path = 1\nk-op-value = 2\n",
+  "envelope (float, literal keys)": "event-envelope = {\n  0 => uint,\n  1 => multihash,\n  2 => [* multihash],\n  3 => uint,\n  4 => [* op],\n  5 => float,\n}\nop = { 0 => uint, 1 => path, 2 => float }\n\nmultihash = bstr .size 34\npath = tstr .regexp \"[a-z0-9._-]{1,64}(/[a-z0-9._-]{1,64})*\"\n"
+ },
+ "instances": [
+  {
+   "name": "envelope, CDE bytes",
+   "hex": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02f9c60005f93800",
+   "valid": {
+    "envelope (float)": true,
+    "envelope (float64)": false,
+    "envelope (float, literal keys)": true
+   },
+   "note": "CDE shortens -6.0 and 0.5 to binary16, so a float64-typed schema rejects canonical data."
+  },
+  {
+   "name": "envelope, floats forced to binary64",
+   "hex": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02fbc01800000000000005fb3fe0000000000000",
+   "valid": {
+    "envelope (float)": true,
+    "envelope (float64)": true,
+    "envelope (float, literal keys)": true
+   },
+   "note": "Valid CDDL but not CDE: schema validation does not check determinism."
+  },
+  {
+   "name": "envelope, path not canonical",
+   "hex": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a300030167547261636b2f5802f9c60005f93800",
+   "valid": {
+    "envelope (float)": false,
+    "envelope (float64)": false,
+    "envelope (float, literal keys)": false
+   },
+   "note": "Uppercase path segment fails .regexp."
+  },
+  {
+   "name": "envelope, id wrong size",
+   "hex": "a6000101431234560282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02f9c60005f93800",
+   "valid": {
+    "envelope (float)": false,
+    "envelope (float64)": false,
+    "envelope (float, literal keys)": false
+   },
+   "note": "bstr .size 34"
+  },
+  {
+   "name": "envelope, unknown key 6",
+   "hex": "a700010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02f9c60005f93800066b6164646564206c61746572",
+   "valid": {
+    "envelope (float)": false,
+    "envelope (float64)": false,
+    "envelope (float, literal keys)": false
+   },
+   "note": "CDDL maps are closed: an older schema rejects a field added later unless the schema has an extension point."
+  }
+ ],
+ "probes": [
+  {
+   "name": ".regexp is anchored",
+   "schema": "a = tstr .regexp \"[a-z]+\"",
+   "hex": "63614243",
+   "valid": false,
+   "note": "\"aBC\"; RFC 8610 \u00a73.8.3 uses XSD regular expressions, which match the whole string."
+  },
+  {
+   "name": ".regexp anchored explicitly",
+   "schema": "a = tstr .regexp \"^[a-z]+$\"",
+   "hex": "63614243",
+   "valid": false,
+   "note": "\"aBC\" with explicit anchors, as a workaround."
+  },
+  {
+   "name": "float64 rejects binary16",
+   "schema": "a = float64",
+   "hex": "f93800",
+   "valid": false,
+   "note": "0.5 as binary16"
+  },
+  {
+   "name": "float16 rejects binary64",
+   "schema": "a = float16",
+   "hex": "fb3ff199999999999a",
+   "valid": false,
+   "note": "1.1 as binary64"
+  },
+  {
+   "name": "uint rejects text",
+   "schema": "a = uint",
+   "hex": "6178",
+   "valid": false,
+   "note": "control"
+  },
+  {
+   "name": "named key constant",
+   "schema": "a = { k => bstr }\nk = 1",
+   "hex": "a1014100",
+   "valid": true,
+   "note": "{1: h'00'} with the key given as a named rule, the style ADR-0039 prescribes for generated schemas."
+  }
+ ]
+}

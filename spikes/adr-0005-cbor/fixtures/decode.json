@@ -1,0 +1,193 @@
+{
+ "format": "tributary-cbor-decode-cases/0",
+ "note": "valid_in lists the profiles whose checking decoder must accept the input: cde = draft-ietf-cbor-cde-09, dcbor = draft-mcnally-deterministic-cbor-12, rfc7049 = RFC 7049 \u00a73.9 canonical (length-first keys, shortest floats).",
+ "cases": [
+  {
+   "name": "control: sorted uint map",
+   "hex": "a201000200",
+   "valid_in": [
+    "cde",
+    "dcbor",
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "unsorted uint keys",
+   "hex": "a202000100",
+   "valid_in": []
+  },
+  {
+   "name": "duplicate keys",
+   "hex": "a201000100",
+   "valid_in": []
+  },
+  {
+   "name": "bytewise order {24, -1}",
+   "hex": "a21818002000",
+   "valid_in": [
+    "cde",
+    "dcbor"
+   ]
+  },
+  {
+   "name": "length-first order {-1, 24}",
+   "hex": "a22000181800",
+   "valid_in": [
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "bytewise order {256, \"a\"}",
+   "hex": "a219010000616100",
+   "valid_in": [
+    "cde",
+    "dcbor"
+   ]
+  },
+  {
+   "name": "length-first order {\"a\", 256}",
+   "hex": "a261610019010000",
+   "valid_in": [
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "non-shortest int 0x1805",
+   "hex": "1805",
+   "valid_in": []
+  },
+  {
+   "name": "non-shortest int 0x190005",
+   "hex": "190005",
+   "valid_in": []
+  },
+  {
+   "name": "non-shortest length h'01' as 0x5801",
+   "hex": "580101",
+   "valid_in": []
+  },
+  {
+   "name": "indefinite array",
+   "hex": "9f01ff",
+   "valid_in": []
+  },
+  {
+   "name": "indefinite map",
+   "hex": "bf0100ff",
+   "valid_in": []
+  },
+  {
+   "name": "indefinite text",
+   "hex": "7f6161ff",
+   "valid_in": []
+  },
+  {
+   "name": "1.5 as binary64",
+   "hex": "fb3ff8000000000000",
+   "valid_in": []
+  },
+  {
+   "name": "1.5 as binary32",
+   "hex": "fa3fc00000",
+   "valid_in": []
+  },
+  {
+   "name": "Infinity as binary64",
+   "hex": "fb7ff0000000000000",
+   "valid_in": []
+  },
+  {
+   "name": "NaN as binary64",
+   "hex": "fb7ff8000000000000",
+   "valid_in": []
+  },
+  {
+   "name": "NaN with payload f97e01",
+   "hex": "f97e01",
+   "valid_in": [
+    "cde",
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "NaN with payload faffc00001",
+   "hex": "faffc00001",
+   "valid_in": [
+    "cde",
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "-0.0",
+   "hex": "f98000",
+   "valid_in": [
+    "cde",
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "integral float 12.0",
+   "hex": "f94a00",
+   "valid_in": [
+    "cde",
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "int -2^64",
+   "hex": "3bffffffffffffffff",
+   "valid_in": [
+    "cde",
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "undefined",
+   "hex": "f7",
+   "valid_in": [
+    "cde",
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "simple(16)",
+   "hex": "f0",
+   "valid_in": [
+    "cde",
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "non-NFC text e+U+0301",
+   "hex": "6365cc81",
+   "valid_in": [
+    "cde",
+    "rfc7049"
+   ]
+  },
+  {
+   "name": "invalid UTF-8 text",
+   "hex": "62c328",
+   "valid_in": []
+  },
+  {
+   "name": "trailing bytes after item",
+   "hex": "0000",
+   "valid_in": []
+  },
+  {
+   "name": "truncated item",
+   "hex": "1a0001",
+   "valid_in": []
+  },
+  {
+   "name": "tag 1 epoch int",
+   "hex": "c11a514b67b0",
+   "valid_in": [
+    "cde",
+    "dcbor",
+    "rfc7049"
+   ]
+  }
+ ]
+}

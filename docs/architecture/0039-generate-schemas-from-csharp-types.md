@@ -128,16 +128,46 @@ after they have happened.
 
 ## Evidence
 
+Available:
+
+- Spike: [`spikes/adr-0005-cbor/`](../../spikes/adr-0005-cbor/) (fixtures, harnesses
+  for `ciborium`, `cbor2`, `dcbor`, `pycddl` and `cddl`, and
+  [`results/report.md`](../../spikes/adr-0005-cbor/results/report.md)).
+
 Required before acceptance:
 
 - [ ] Generate CDDL for the event envelope and three event types (including a type
       choice), and review it for readability without the C# source.
-- [ ] Confirm the deterministic-encoding modes of `ciborium` and `cbor2` (key
+- [x] Confirm the deterministic-encoding modes of `ciborium` and `cbor2` (key
       ordering, float handling). With only non-negative integer keys, RFC 8949
       bytewise and RFC 7049 length-first ordering agree.
+      - `ciborium` 0.2.2 has no canonical serializer. Its `CanonicalValue` sorts
+        length-first. With keys sorted bytewise by the harness, its output matches
+        CDE on all 89 fixtures, including NaN payloads.
+      - `cbor2` 6.1.5 `canonical=True` sorts length-first and writes every NaN as
+        `f97e00`. It is otherwise CDE.
+      - Neither decoder checks determinism. `cbor2` can reject duplicates and
+        indefinite lengths on request, and accepts trailing bytes.
+      - The orders agree for any map whose keys all share one major type, which
+        includes text-keyed dictionaries.
 - [ ] Confirm that a maintained Python CDDL validator exists (`pycddl` or an
-      equivalent).
-- [ ] Define the format of the language-neutral fixture descriptions.
+      equivalent). Findings:
+      - `pycddl` 0.6.4 (last release 2025-06-11) wraps the Rust `cddl` crate 0.9.5,
+        so it is not independent of the Rust validator.
+      - `pycddl` and `cddl` 0.10.7 both treat `.regexp` as an unanchored search, so
+        `tstr .regexp "[a-z]+"` accepts `"aBC"`. RFC 8610 specifies XSD regular
+        expressions, which match the whole string. Generated patterns need explicit
+        `^…$`.
+      - Neither validator checks float widths. Under preferred serialization, a C#
+        `double` holding 0.5 is encoded as binary16, so a `float64` rule would be
+        wrong even if it were checked. `float` is the rule that matches the data.
+      - `cddl` 0.10.0–0.10.7 mis-validate map keys given as named constants
+        (`k-name = n`, the style in the mapping table above). 0.9.5 handles them,
+        and literal integer keys work in both.
+- [ ] Define the format of the language-neutral fixture descriptions. Proposed in
+      the spike: one-key JSON nodes, with integers as decimal strings, floats as
+      binary64 bit patterns in hex, and map entries as ordered pairs. See
+      [`fixtures/encode.json`](../../spikes/adr-0005-cbor/fixtures/encode.json).
 
 ## Fitness functions
 

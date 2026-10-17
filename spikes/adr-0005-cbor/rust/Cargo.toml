@@ -1,0 +1,11 @@
+[package]
+name = "cbor-spike"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cddl = "=0.10.7"
+ciborium = "=0.2.2"
+dcbor = "=0.25.2"
+hex = "=0.4.3"
+serde_json = "=1.0.154"

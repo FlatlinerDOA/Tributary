@@ -1,0 +1,480 @@
+{
+ "impl": "python cbor2",
+ "version": "6.1.5",
+ "encode": {
+  "int 0": {
+   "canonical=True": "00",
+   "default": "00"
+  },
+  "int 1": {
+   "canonical=True": "01",
+   "default": "01"
+  },
+  "int 10": {
+   "canonical=True": "0a",
+   "default": "0a"
+  },
+  "int 23": {
+   "canonical=True": "17",
+   "default": "17"
+  },
+  "int 24": {
+   "canonical=True": "1818",
+   "default": "1818"
+  },
+  "int 25": {
+   "canonical=True": "1819",
+   "default": "1819"
+  },
+  "int 100": {
+   "canonical=True": "1864",
+   "default": "1864"
+  },
+  "int 255": {
+   "canonical=True": "18ff",
+   "default": "18ff"
+  },
+  "int 256": {
+   "canonical=True": "190100",
+   "default": "190100"
+  },
+  "int 1000": {
+   "canonical=True": "1903e8",
+   "default": "1903e8"
+  },
+  "int 65535": {
+   "canonical=True": "19ffff",
+   "default": "19ffff"
+  },
+  "int 65536": {
+   "canonical=True": "1a00010000",
+   "default": "1a00010000"
+  },
+  "int 1000000": {
+   "canonical=True": "1a000f4240",
+   "default": "1a000f4240"
+  },
+  "int 4294967295": {
+   "canonical=True": "1affffffff",
+   "default": "1affffffff"
+  },
+  "int 4294967296": {
+   "canonical=True": "1b0000000100000000",
+   "default": "1b0000000100000000"
+  },
+  "int 1000000000000": {
+   "canonical=True": "1b000000e8d4a51000",
+   "default": "1b000000e8d4a51000"
+  },
+  "int 18446744073709551615": {
+   "canonical=True": "1bffffffffffffffff",
+   "default": "1bffffffffffffffff"
+  },
+  "int -1": {
+   "canonical=True": "20",
+   "default": "20"
+  },
+  "int -10": {
+   "canonical=True": "29",
+   "default": "29"
+  },
+  "int -24": {
+   "canonical=True": "37",
+   "default": "37"
+  },
+  "int -25": {
+   "canonical=True": "3818",
+   "default": "3818"
+  },
+  "int -100": {
+   "canonical=True": "3863",
+   "default": "3863"
+  },
+  "int -1000": {
+   "canonical=True": "3903e7",
+   "default": "3903e7"
+  },
+  "int -9223372036854775808": {
+   "canonical=True": "3b7fffffffffffffff",
+   "default": "3b7fffffffffffffff"
+  },
+  "int -2^64": {
+   "canonical=True": "3bffffffffffffffff",
+   "default": "3bffffffffffffffff"
+  },
+  "float 0.0": {
+   "canonical=True": "f90000",
+   "default": "fb0000000000000000"
+  },
+  "float -0.0": {
+   "canonical=True": "f98000",
+   "default": "fb8000000000000000"
+  },
+  "float 1.0": {
+   "canonical=True": "f93c00",
+   "default": "fb3ff0000000000000"
+  },
+  "float 1.1": {
+   "canonical=True": "fb3ff199999999999a",
+   "default": "fb3ff199999999999a"
+  },
+  "float 1.5": {
+   "canonical=True": "f93e00",
+   "default": "fb3ff8000000000000"
+  },
+  "float 65504.0": {
+   "canonical=True": "f97bff",
+   "default": "fb40effc0000000000"
+  },
+  "float 100000.0": {
+   "canonical=True": "fa47c35000",
+   "default": "fb40f86a0000000000"
+  },
+  "float 3.4028234663852886e+38": {
+   "canonical=True": "fa7f7fffff",
+   "default": "fb47efffffe0000000"
+  },
+  "float 1e+300": {
+   "canonical=True": "fb7e37e43c8800759c",
+   "default": "fb7e37e43c8800759c"
+  },
+  "float 5.960464477539063e-08": {
+   "canonical=True": "f90001",
+   "default": "fb3e70000000000000"
+  },
+  "float 6.103515625e-05": {
+   "canonical=True": "f90400",
+   "default": "fb3f10000000000000"
+  },
+  "float -4.0": {
+   "canonical=True": "f9c400",
+   "default": "fbc010000000000000"
+  },
+  "float -4.1": {
+   "canonical=True": "fbc010666666666666",
+   "default": "fbc010666666666666"
+  },
+  "float inf": {
+   "canonical=True": "f97c00",
+   "default": "f97c00"
+  },
+  "float -inf": {
+   "canonical=True": "f9fc00",
+   "default": "f9fc00"
+  },
+  "float 2345678.25": {
+   "canonical=True": "fa4a0f2b39",
+   "default": "fb4141e56720000000"
+  },
+  "float 1.2": {
+   "canonical=True": "fb3ff3333333333333",
+   "default": "fb3ff3333333333333"
+  },
+  "float 42.0": {
+   "canonical=True": "f95140",
+   "default": "fb4045000000000000"
+  },
+  "float 2345678.0": {
+   "canonical=True": "fa4a0f2b38",
+   "default": "fb4141e56700000000"
+  },
+  "float -2345678.0": {
+   "canonical=True": "faca0f2b38",
+   "default": "fbc141e56700000000"
+  },
+  "float 1.401298464324817e-45": {
+   "canonical=True": "fa00000001",
+   "default": "fb36a0000000000000"
+  },
+  "float 5e-324": {
+   "canonical=True": "fb0000000000000001",
+   "default": "fb0000000000000001"
+  },
+  "float 2.2250738585072014e-308": {
+   "canonical=True": "fb0010000000000000",
+   "default": "fb0010000000000000"
+  },
+  "float 33554430.0": {
+   "canonical=True": "fa4bffffff",
+   "default": "fb417fffffe0000000"
+  },
+  "float -9.223372036854775e+18": {
+   "canonical=True": "fbc3dfffffffffffff",
+   "default": "fbc3dfffffffffffff"
+  },
+  "float 1.844674407370955e+19": {
+   "canonical=True": "fb43efffffffffffff",
+   "default": "fb43efffffffffffff"
+  },
+  "float 1.8446744073709552e+19": {
+   "canonical=True": "fa5f800000",
+   "default": "fb43f0000000000000"
+  },
+  "float -1.8446742974197924e+19": {
+   "canonical=True": "fadf7fffff",
+   "default": "fbc3efffffe0000000"
+  },
+  "float 3.402823466385289e+38": {
+   "canonical=True": "fb47efffffe0000001",
+   "default": "fb47efffffe0000001"
+  },
+  "float 1.7976931348623157e+308": {
+   "canonical=True": "fb7fefffffffffffff",
+   "default": "fb7fefffffffffffff"
+  },
+  "float 12.0": {
+   "canonical=True": "f94a00",
+   "default": "fb4028000000000000"
+  },
+  "float -9.223372036854776e+18": {
+   "canonical=True": "fadf000000",
+   "default": "fbc3e0000000000000"
+  },
+  "float NaN 7ff8000000000000": {
+   "canonical=True": "f97e00",
+   "default": "f97e00"
+  },
+  "float NaN fff8000000000000": {
+   "canonical=True": "f97e00",
+   "default": "f97e00"
+  },
+  "float NaN 7ff8000000000001": {
+   "canonical=True": "f97e00",
+   "default": "f97e00"
+  },
+  "float NaN 7ff8000020000000": {
+   "canonical=True": "f97e00",
+   "default": "f97e00"
+  },
+  "float NaN 7ff0000000000001": {
+   "canonical=True": "f97e00",
+   "default": "f97e00"
+  },
+  "text empty": {
+   "canonical=True": "60",
+   "default": "60"
+  },
+  "text a": {
+   "canonical=True": "6161",
+   "default": "6161"
+  },
+  "text IETF": {
+   "canonical=True": "6449455446",
+   "default": "6449455446"
+  },
+  "text u00fc": {
+   "canonical=True": "62c3bc",
+   "default": "62c3bc"
+  },
+  "text u6c34": {
+   "canonical=True": "63e6b0b4",
+   "default": "63e6b0b4"
+  },
+  "text U+10151": {
+   "canonical=True": "64f0908591",
+   "default": "64f0908591"
+  },
+  "text non-NFC e+U+0301": {
+   "canonical=True": "6365cc81",
+   "default": "6365cc81"
+  },
+  "bytes empty": {
+   "canonical=True": "40",
+   "default": "40"
+  },
+  "bytes 01020304": {
+   "canonical=True": "4401020304",
+   "default": "4401020304"
+  },
+  "false": {
+   "canonical=True": "f4",
+   "default": "f4"
+  },
+  "true": {
+   "canonical=True": "f5",
+   "default": "f5"
+  },
+  "null": {
+   "canonical=True": "f6",
+   "default": "f6"
+  },
+  "array empty": {
+   "canonical=True": "80",
+   "default": "80"
+  },
+  "array nested": {
+   "canonical=True": "8301820203820405",
+   "default": "8301820203820405"
+  },
+  "array 25 items": {
+   "canonical=True": "98190102030405060708090a0b0c0d0e0f101112131415161718181819",
+   "default": "98190102030405060708090a0b0c0d0e0f101112131415161718181819"
+  },
+  "map empty": {
+   "canonical=True": "a0",
+   "default": "a0"
+  },
+  "tag 1 epoch int": {
+   "canonical=True": "c11a514b67b0",
+   "default": "c11a514b67b0"
+  },
+  "tag 1 epoch float": {
+   "canonical=True": "c1fb41d452d9ec200000",
+   "default": "c1fb41d452d9ec200000"
+  },
+  "tag 32 uri": {
+   "canonical=True": "d82076687474703a2f2f7777772e6578616d706c652e636f6d",
+   "default": "d82076687474703a2f2f7777772e6578616d706c652e636f6d"
+  },
+  "map uint keys reversed": {
+   "canonical=True": "a201020304",
+   "default": "a203040102"
+  },
+  "map text keys reversed": {
+   "canonical=True": "a56161614161626142616361436164614461656145",
+   "default": "a56165614561646144616361436162614261616141"
+  },
+  "map uint keys spanning header sizes": {
+   "canonical=True": "a4000017001818001903e800",
+   "default": "a41903e80018180017000000"
+  },
+  "map 24 vs -1 (orders disagree)": {
+   "canonical=True": "a22000181800",
+   "default": "a22000181800"
+  },
+  "map 256 vs \"a\" (orders disagree)": {
+   "canonical=True": "a261610019010000",
+   "default": "a261610019010000"
+  },
+  "map mixed key types": {
+   "canonical=True": "a40a002000410000616100",
+   "default": "a461610020000a00410000"
+  },
+  "map nested unsorted": {
+   "canonical=True": "a26161016162a201000200",
+   "default": "a26162a202000100616101"
+  },
+  "event envelope": {
+   "canonical=True": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02f9c60005f93800",
+   "default": "a60481a301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e000302fbc0180000000000000001031b00000199c82cc0000158221220abababababababababababababababababababababababababababababababab028258221220010101010101010101010101010101010101010101010101010101010101010158221220020202020202020202020202020202020202020202020202020202020202020205fb3fe0000000000000"
+  }
+ },
+ "decode": {
+  "control: sorted uint map": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "unsorted uint keys": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "duplicate keys": {
+   "loads": "accept",
+   "loads strict": "reject: CBORDecodeError: error decoding map: Duplicate map key: 1"
+  },
+  "bytewise order {24, -1}": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "length-first order {-1, 24}": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "bytewise order {256, \"a\"}": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "length-first order {\"a\", 256}": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "non-shortest int 0x1805": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "non-shortest int 0x190005": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "non-shortest length h'01' as 0x5801": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "indefinite array": {
+   "loads": "accept",
+   "loads strict": "reject: CBORDecodeError: error decoding array: encountered indefinite length but it has been disabled"
+  },
+  "indefinite map": {
+   "loads": "accept",
+   "loads strict": "reject: CBORDecodeError: error decoding map: encountered indefinite length but it has been disabled"
+  },
+  "indefinite text": {
+   "loads": "accept",
+   "loads strict": "reject: CBORDecodeError: error decoding text string: encountered indefinite length but it has been disabled"
+  },
+  "1.5 as binary64": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "1.5 as binary32": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "Infinity as binary64": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "NaN as binary64": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "NaN with payload f97e01": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "NaN with payload faffc00001": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "-0.0": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "integral float 12.0": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "int -2^64": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "undefined": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "simple(16)": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "non-NFC text e+U+0301": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "invalid UTF-8 text": {
+   "loads": "reject: CBORDecodeError: error decoding text string",
+   "loads strict": "reject: CBORDecodeError: error decoding text string"
+  },
+  "trailing bytes after item": {
+   "loads": "accept",
+   "loads strict": "accept"
+  },
+  "truncated item": {
+   "loads": "reject: CBORDecodeEOF: premature end of stream (expected to read at least 2 bytes, got 0 instead)",
+   "loads strict": "reject: CBORDecodeEOF: premature end of stream (expected to read at least 2 bytes, got 0 instead)"
+  },
+  "tag 1 epoch int": {
+   "loads": "accept",
+   "loads strict": "accept"
+  }
+ }
+}

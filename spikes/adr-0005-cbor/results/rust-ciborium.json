@@ -1,0 +1,540 @@
+{
+  "decode": {
+    "-0.0": {
+      "ciborium from_reader": "accept"
+    },
+    "1.5 as binary32": {
+      "ciborium from_reader": "accept"
+    },
+    "1.5 as binary64": {
+      "ciborium from_reader": "accept"
+    },
+    "Infinity as binary64": {
+      "ciborium from_reader": "accept"
+    },
+    "NaN as binary64": {
+      "ciborium from_reader": "accept"
+    },
+    "NaN with payload f97e01": {
+      "ciborium from_reader": "accept"
+    },
+    "NaN with payload faffc00001": {
+      "ciborium from_reader": "accept"
+    },
+    "bytewise order {24, -1}": {
+      "ciborium from_reader": "accept"
+    },
+    "bytewise order {256, \"a\"}": {
+      "ciborium from_reader": "accept"
+    },
+    "control: sorted uint map": {
+      "ciborium from_reader": "accept"
+    },
+    "duplicate keys": {
+      "ciborium from_reader": "accept"
+    },
+    "indefinite array": {
+      "ciborium from_reader": "accept"
+    },
+    "indefinite map": {
+      "ciborium from_reader": "accept"
+    },
+    "indefinite text": {
+      "ciborium from_reader": "accept"
+    },
+    "int -2^64": {
+      "ciborium from_reader": "accept"
+    },
+    "integral float 12.0": {
+      "ciborium from_reader": "accept"
+    },
+    "invalid UTF-8 text": {
+      "ciborium from_reader": "reject: Syntax(0)"
+    },
+    "length-first order {\"a\", 256}": {
+      "ciborium from_reader": "accept"
+    },
+    "length-first order {-1, 24}": {
+      "ciborium from_reader": "accept"
+    },
+    "non-NFC text e+U+0301": {
+      "ciborium from_reader": "accept"
+    },
+    "non-shortest int 0x1805": {
+      "ciborium from_reader": "accept"
+    },
+    "non-shortest int 0x190005": {
+      "ciborium from_reader": "accept"
+    },
+    "non-shortest length h'01' as 0x5801": {
+      "ciborium from_reader": "accept"
+    },
+    "simple(16)": {
+      "ciborium from_reader": "reject: Semantic(None, \"invalid type: simple, expected known simple value\")"
+    },
+    "tag 1 epoch int": {
+      "ciborium from_reader": "accept"
+    },
+    "trailing bytes after item": {
+      "ciborium from_reader": "reject: 1 trailing bytes"
+    },
+    "truncated item": {
+      "ciborium from_reader": "reject: Io(Error { kind: UnexpectedEof, message: \"failed to fill whole buffer\" })"
+    },
+    "undefined": {
+      "ciborium from_reader": "accept"
+    },
+    "unsorted uint keys": {
+      "ciborium from_reader": "accept"
+    }
+  },
+  "encode": {
+    "array 25 items": {
+      "ciborium CanonicalValue sort": "98190102030405060708090a0b0c0d0e0f101112131415161718181819",
+      "ciborium bytewise sort": "98190102030405060708090a0b0c0d0e0f101112131415161718181819",
+      "ciborium into_writer": "98190102030405060708090a0b0c0d0e0f101112131415161718181819"
+    },
+    "array empty": {
+      "ciborium CanonicalValue sort": "80",
+      "ciborium bytewise sort": "80",
+      "ciborium into_writer": "80"
+    },
+    "array nested": {
+      "ciborium CanonicalValue sort": "8301820203820405",
+      "ciborium bytewise sort": "8301820203820405",
+      "ciborium into_writer": "8301820203820405"
+    },
+    "bytes 01020304": {
+      "ciborium CanonicalValue sort": "4401020304",
+      "ciborium bytewise sort": "4401020304",
+      "ciborium into_writer": "4401020304"
+    },
+    "bytes empty": {
+      "ciborium CanonicalValue sort": "40",
+      "ciborium bytewise sort": "40",
+      "ciborium into_writer": "40"
+    },
+    "event envelope": {
+      "ciborium CanonicalValue sort": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02f9c60005f93800",
+      "ciborium bytewise sort": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02f9c60005f93800",
+      "ciborium into_writer": "a60481a301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e000302f9c6000001031b00000199c82cc0000158221220abababababababababababababababababababababababababababababababab028258221220010101010101010101010101010101010101010101010101010101010101010158221220020202020202020202020202020202020202020202020202020202020202020205f93800"
+    },
+    "false": {
+      "ciborium CanonicalValue sort": "f4",
+      "ciborium bytewise sort": "f4",
+      "ciborium into_writer": "f4"
+    },
+    "float -0.0": {
+      "ciborium CanonicalValue sort": "f98000",
+      "ciborium bytewise sort": "f98000",
+      "ciborium into_writer": "f98000"
+    },
+    "float -1.8446742974197924e+19": {
+      "ciborium CanonicalValue sort": "fadf7fffff",
+      "ciborium bytewise sort": "fadf7fffff",
+      "ciborium into_writer": "fadf7fffff"
+    },
+    "float -2345678.0": {
+      "ciborium CanonicalValue sort": "faca0f2b38",
+      "ciborium bytewise sort": "faca0f2b38",
+      "ciborium into_writer": "faca0f2b38"
+    },
+    "float -4.0": {
+      "ciborium CanonicalValue sort": "f9c400",
+      "ciborium bytewise sort": "f9c400",
+      "ciborium into_writer": "f9c400"
+    },
+    "float -4.1": {
+      "ciborium CanonicalValue sort": "fbc010666666666666",
+      "ciborium bytewise sort": "fbc010666666666666",
+      "ciborium into_writer": "fbc010666666666666"
+    },
+    "float -9.223372036854775e+18": {
+      "ciborium CanonicalValue sort": "fbc3dfffffffffffff",
+      "ciborium bytewise sort": "fbc3dfffffffffffff",
+      "ciborium into_writer": "fbc3dfffffffffffff"
+    },
+    "float -9.223372036854776e+18": {
+      "ciborium CanonicalValue sort": "fadf000000",
+      "ciborium bytewise sort": "fadf000000",
+      "ciborium into_writer": "fadf000000"
+    },
+    "float -inf": {
+      "ciborium CanonicalValue sort": "f9fc00",
+      "ciborium bytewise sort": "f9fc00",
+      "ciborium into_writer": "f9fc00"
+    },
+    "float 0.0": {
+      "ciborium CanonicalValue sort": "f90000",
+      "ciborium bytewise sort": "f90000",
+      "ciborium into_writer": "f90000"
+    },
+    "float 1.0": {
+      "ciborium CanonicalValue sort": "f93c00",
+      "ciborium bytewise sort": "f93c00",
+      "ciborium into_writer": "f93c00"
+    },
+    "float 1.1": {
+      "ciborium CanonicalValue sort": "fb3ff199999999999a",
+      "ciborium bytewise sort": "fb3ff199999999999a",
+      "ciborium into_writer": "fb3ff199999999999a"
+    },
+    "float 1.2": {
+      "ciborium CanonicalValue sort": "fb3ff3333333333333",
+      "ciborium bytewise sort": "fb3ff3333333333333",
+      "ciborium into_writer": "fb3ff3333333333333"
+    },
+    "float 1.401298464324817e-45": {
+      "ciborium CanonicalValue sort": "fa00000001",
+      "ciborium bytewise sort": "fa00000001",
+      "ciborium into_writer": "fa00000001"
+    },
+    "float 1.5": {
+      "ciborium CanonicalValue sort": "f93e00",
+      "ciborium bytewise sort": "f93e00",
+      "ciborium into_writer": "f93e00"
+    },
+    "float 1.7976931348623157e+308": {
+      "ciborium CanonicalValue sort": "fb7fefffffffffffff",
+      "ciborium bytewise sort": "fb7fefffffffffffff",
+      "ciborium into_writer": "fb7fefffffffffffff"
+    },
+    "float 1.8446744073709552e+19": {
+      "ciborium CanonicalValue sort": "fa5f800000",
+      "ciborium bytewise sort": "fa5f800000",
+      "ciborium into_writer": "fa5f800000"
+    },
+    "float 1.844674407370955e+19": {
+      "ciborium CanonicalValue sort": "fb43efffffffffffff",
+      "ciborium bytewise sort": "fb43efffffffffffff",
+      "ciborium into_writer": "fb43efffffffffffff"
+    },
+    "float 100000.0": {
+      "ciborium CanonicalValue sort": "fa47c35000",
+      "ciborium bytewise sort": "fa47c35000",
+      "ciborium into_writer": "fa47c35000"
+    },
+    "float 12.0": {
+      "ciborium CanonicalValue sort": "f94a00",
+      "ciborium bytewise sort": "f94a00",
+      "ciborium into_writer": "f94a00"
+    },
+    "float 1e+300": {
+      "ciborium CanonicalValue sort": "fb7e37e43c8800759c",
+      "ciborium bytewise sort": "fb7e37e43c8800759c",
+      "ciborium into_writer": "fb7e37e43c8800759c"
+    },
+    "float 2.2250738585072014e-308": {
+      "ciborium CanonicalValue sort": "fb0010000000000000",
+      "ciborium bytewise sort": "fb0010000000000000",
+      "ciborium into_writer": "fb0010000000000000"
+    },
+    "float 2345678.0": {
+      "ciborium CanonicalValue sort": "fa4a0f2b38",
+      "ciborium bytewise sort": "fa4a0f2b38",
+      "ciborium into_writer": "fa4a0f2b38"
+    },
+    "float 2345678.25": {
+      "ciborium CanonicalValue sort": "fa4a0f2b39",
+      "ciborium bytewise sort": "fa4a0f2b39",
+      "ciborium into_writer": "fa4a0f2b39"
+    },
+    "float 3.4028234663852886e+38": {
+      "ciborium CanonicalValue sort": "fa7f7fffff",
+      "ciborium bytewise sort": "fa7f7fffff",
+      "ciborium into_writer": "fa7f7fffff"
+    },
+    "float 3.402823466385289e+38": {
+      "ciborium CanonicalValue sort": "fb47efffffe0000001",
+      "ciborium bytewise sort": "fb47efffffe0000001",
+      "ciborium into_writer": "fb47efffffe0000001"
+    },
+    "float 33554430.0": {
+      "ciborium CanonicalValue sort": "fa4bffffff",
+      "ciborium bytewise sort": "fa4bffffff",
+      "ciborium into_writer": "fa4bffffff"
+    },
+    "float 42.0": {
+      "ciborium CanonicalValue sort": "f95140",
+      "ciborium bytewise sort": "f95140",
+      "ciborium into_writer": "f95140"
+    },
+    "float 5.960464477539063e-08": {
+      "ciborium CanonicalValue sort": "f90001",
+      "ciborium bytewise sort": "f90001",
+      "ciborium into_writer": "f90001"
+    },
+    "float 5e-324": {
+      "ciborium CanonicalValue sort": "fb0000000000000001",
+      "ciborium bytewise sort": "fb0000000000000001",
+      "ciborium into_writer": "fb0000000000000001"
+    },
+    "float 6.103515625e-05": {
+      "ciborium CanonicalValue sort": "f90400",
+      "ciborium bytewise sort": "f90400",
+      "ciborium into_writer": "f90400"
+    },
+    "float 65504.0": {
+      "ciborium CanonicalValue sort": "f97bff",
+      "ciborium bytewise sort": "f97bff",
+      "ciborium into_writer": "f97bff"
+    },
+    "float NaN 7ff0000000000001": {
+      "ciborium CanonicalValue sort": "fb7ff0000000000001",
+      "ciborium bytewise sort": "fb7ff0000000000001",
+      "ciborium into_writer": "fb7ff0000000000001"
+    },
+    "float NaN 7ff8000000000000": {
+      "ciborium CanonicalValue sort": "f97e00",
+      "ciborium bytewise sort": "f97e00",
+      "ciborium into_writer": "f97e00"
+    },
+    "float NaN 7ff8000000000001": {
+      "ciborium CanonicalValue sort": "fb7ff8000000000001",
+      "ciborium bytewise sort": "fb7ff8000000000001",
+      "ciborium into_writer": "fb7ff8000000000001"
+    },
+    "float NaN 7ff8000020000000": {
+      "ciborium CanonicalValue sort": "fa7fc00001",
+      "ciborium bytewise sort": "fa7fc00001",
+      "ciborium into_writer": "fa7fc00001"
+    },
+    "float NaN fff8000000000000": {
+      "ciborium CanonicalValue sort": "f9fe00",
+      "ciborium bytewise sort": "f9fe00",
+      "ciborium into_writer": "f9fe00"
+    },
+    "float inf": {
+      "ciborium CanonicalValue sort": "f97c00",
+      "ciborium bytewise sort": "f97c00",
+      "ciborium into_writer": "f97c00"
+    },
+    "int -1": {
+      "ciborium CanonicalValue sort": "20",
+      "ciborium bytewise sort": "20",
+      "ciborium into_writer": "20"
+    },
+    "int -10": {
+      "ciborium CanonicalValue sort": "29",
+      "ciborium bytewise sort": "29",
+      "ciborium into_writer": "29"
+    },
+    "int -100": {
+      "ciborium CanonicalValue sort": "3863",
+      "ciborium bytewise sort": "3863",
+      "ciborium into_writer": "3863"
+    },
+    "int -1000": {
+      "ciborium CanonicalValue sort": "3903e7",
+      "ciborium bytewise sort": "3903e7",
+      "ciborium into_writer": "3903e7"
+    },
+    "int -24": {
+      "ciborium CanonicalValue sort": "37",
+      "ciborium bytewise sort": "37",
+      "ciborium into_writer": "37"
+    },
+    "int -25": {
+      "ciborium CanonicalValue sort": "3818",
+      "ciborium bytewise sort": "3818",
+      "ciborium into_writer": "3818"
+    },
+    "int -2^64": {
+      "ciborium CanonicalValue sort": "3bffffffffffffffff",
+      "ciborium bytewise sort": "3bffffffffffffffff",
+      "ciborium into_writer": "3bffffffffffffffff"
+    },
+    "int -9223372036854775808": {
+      "ciborium CanonicalValue sort": "3b7fffffffffffffff",
+      "ciborium bytewise sort": "3b7fffffffffffffff",
+      "ciborium into_writer": "3b7fffffffffffffff"
+    },
+    "int 0": {
+      "ciborium CanonicalValue sort": "00",
+      "ciborium bytewise sort": "00",
+      "ciborium into_writer": "00"
+    },
+    "int 1": {
+      "ciborium CanonicalValue sort": "01",
+      "ciborium bytewise sort": "01",
+      "ciborium into_writer": "01"
+    },
+    "int 10": {
+      "ciborium CanonicalValue sort": "0a",
+      "ciborium bytewise sort": "0a",
+      "ciborium into_writer": "0a"
+    },
+    "int 100": {
+      "ciborium CanonicalValue sort": "1864",
+      "ciborium bytewise sort": "1864",
+      "ciborium into_writer": "1864"
+    },
+    "int 1000": {
+      "ciborium CanonicalValue sort": "1903e8",
+      "ciborium bytewise sort": "1903e8",
+      "ciborium into_writer": "1903e8"
+    },
+    "int 1000000": {
+      "ciborium CanonicalValue sort": "1a000f4240",
+      "ciborium bytewise sort": "1a000f4240",
+      "ciborium into_writer": "1a000f4240"
+    },
+    "int 1000000000000": {
+      "ciborium CanonicalValue sort": "1b000000e8d4a51000",
+      "ciborium bytewise sort": "1b000000e8d4a51000",
+      "ciborium into_writer": "1b000000e8d4a51000"
+    },
+    "int 18446744073709551615": {
+      "ciborium CanonicalValue sort": "1bffffffffffffffff",
+      "ciborium bytewise sort": "1bffffffffffffffff",
+      "ciborium into_writer": "1bffffffffffffffff"
+    },
+    "int 23": {
+      "ciborium CanonicalValue sort": "17",
+      "ciborium bytewise sort": "17",
+      "ciborium into_writer": "17"
+    },
+    "int 24": {
+      "ciborium CanonicalValue sort": "1818",
+      "ciborium bytewise sort": "1818",
+      "ciborium into_writer": "1818"
+    },
+    "int 25": {
+      "ciborium CanonicalValue sort": "1819",
+      "ciborium bytewise sort": "1819",
+      "ciborium into_writer": "1819"
+    },
+    "int 255": {
+      "ciborium CanonicalValue sort": "18ff",
+      "ciborium bytewise sort": "18ff",
+      "ciborium into_writer": "18ff"
+    },
+    "int 256": {
+      "ciborium CanonicalValue sort": "190100",
+      "ciborium bytewise sort": "190100",
+      "ciborium into_writer": "190100"
+    },
+    "int 4294967295": {
+      "ciborium CanonicalValue sort": "1affffffff",
+      "ciborium bytewise sort": "1affffffff",
+      "ciborium into_writer": "1affffffff"
+    },
+    "int 4294967296": {
+      "ciborium CanonicalValue sort": "1b0000000100000000",
+      "ciborium bytewise sort": "1b0000000100000000",
+      "ciborium into_writer": "1b0000000100000000"
+    },
+    "int 65535": {
+      "ciborium CanonicalValue sort": "19ffff",
+      "ciborium bytewise sort": "19ffff",
+      "ciborium into_writer": "19ffff"
+    },
+    "int 65536": {
+      "ciborium CanonicalValue sort": "1a00010000",
+      "ciborium bytewise sort": "1a00010000",
+      "ciborium into_writer": "1a00010000"
+    },
+    "map 24 vs -1 (orders disagree)": {
+      "ciborium CanonicalValue sort": "a22000181800",
+      "ciborium bytewise sort": "a21818002000",
+      "ciborium into_writer": "a22000181800"
+    },
+    "map 256 vs \"a\" (orders disagree)": {
+      "ciborium CanonicalValue sort": "a261610019010000",
+      "ciborium bytewise sort": "a219010000616100",
+      "ciborium into_writer": "a261610019010000"
+    },
+    "map empty": {
+      "ciborium CanonicalValue sort": "a0",
+      "ciborium bytewise sort": "a0",
+      "ciborium into_writer": "a0"
+    },
+    "map mixed key types": {
+      "ciborium CanonicalValue sort": "a40a002000410000616100",
+      "ciborium bytewise sort": "a40a002000410000616100",
+      "ciborium into_writer": "a461610020000a00410000"
+    },
+    "map nested unsorted": {
+      "ciborium CanonicalValue sort": "a26161016162a201000200",
+      "ciborium bytewise sort": "a26161016162a201000200",
+      "ciborium into_writer": "a26162a202000100616101"
+    },
+    "map text keys reversed": {
+      "ciborium CanonicalValue sort": "a56161614161626142616361436164614461656145",
+      "ciborium bytewise sort": "a56161614161626142616361436164614461656145",
+      "ciborium into_writer": "a56165614561646144616361436162614261616141"
+    },
+    "map uint keys reversed": {
+      "ciborium CanonicalValue sort": "a201020304",
+      "ciborium bytewise sort": "a201020304",
+      "ciborium into_writer": "a203040102"
+    },
+    "map uint keys spanning header sizes": {
+      "ciborium CanonicalValue sort": "a4000017001818001903e800",
+      "ciborium bytewise sort": "a4000017001818001903e800",
+      "ciborium into_writer": "a41903e80018180017000000"
+    },
+    "null": {
+      "ciborium CanonicalValue sort": "f6",
+      "ciborium bytewise sort": "f6",
+      "ciborium into_writer": "f6"
+    },
+    "tag 1 epoch float": {
+      "ciborium CanonicalValue sort": "c1fb41d452d9ec200000",
+      "ciborium bytewise sort": "c1fb41d452d9ec200000",
+      "ciborium into_writer": "c1fb41d452d9ec200000"
+    },
+    "tag 1 epoch int": {
+      "ciborium CanonicalValue sort": "c11a514b67b0",
+      "ciborium bytewise sort": "c11a514b67b0",
+      "ciborium into_writer": "c11a514b67b0"
+    },
+    "tag 32 uri": {
+      "ciborium CanonicalValue sort": "d82076687474703a2f2f7777772e6578616d706c652e636f6d",
+      "ciborium bytewise sort": "d82076687474703a2f2f7777772e6578616d706c652e636f6d",
+      "ciborium into_writer": "d82076687474703a2f2f7777772e6578616d706c652e636f6d"
+    },
+    "text IETF": {
+      "ciborium CanonicalValue sort": "6449455446",
+      "ciborium bytewise sort": "6449455446",
+      "ciborium into_writer": "6449455446"
+    },
+    "text U+10151": {
+      "ciborium CanonicalValue sort": "64f0908591",
+      "ciborium bytewise sort": "64f0908591",
+      "ciborium into_writer": "64f0908591"
+    },
+    "text a": {
+      "ciborium CanonicalValue sort": "6161",
+      "ciborium bytewise sort": "6161",
+      "ciborium into_writer": "6161"
+    },
+    "text empty": {
+      "ciborium CanonicalValue sort": "60",
+      "ciborium bytewise sort": "60",
+      "ciborium into_writer": "60"
+    },
+    "text non-NFC e+U+0301": {
+      "ciborium CanonicalValue sort": "6365cc81",
+      "ciborium bytewise sort": "6365cc81",
+      "ciborium into_writer": "6365cc81"
+    },
+    "text u00fc": {
+      "ciborium CanonicalValue sort": "62c3bc",
+      "ciborium bytewise sort": "62c3bc",
+      "ciborium into_writer": "62c3bc"
+    },
+    "text u6c34": {
+      "ciborium CanonicalValue sort": "63e6b0b4",
+      "ciborium bytewise sort": "63e6b0b4",
+      "ciborium into_writer": "63e6b0b4"
+    },
+    "true": {
+      "ciborium CanonicalValue sort": "f5",
+      "ciborium bytewise sort": "f5",
+      "ciborium into_writer": "f5"
+    }
+  },
+  "impl": "rust ciborium",
+  "version": "0.2.2"
+}

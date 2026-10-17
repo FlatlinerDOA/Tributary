@@ -1,0 +1,1072 @@
+{
+  "impl": "dotnet System.Formats.Cbor",
+  "version": "10.0.0\u002Bb0f34d51fccc69fd334253924abd8d6853fad7aa",
+  "encode": {
+    "int 0": {
+      "Lax, WriteDouble": "00",
+      "Lax, shortest float": "00",
+      "Strict, WriteDouble": "00",
+      "Strict, shortest float": "00",
+      "Canonical, WriteDouble": "00",
+      "Canonical, shortest float": "00",
+      "Ctap2Canonical, WriteDouble": "00",
+      "Ctap2Canonical, shortest float": "00"
+    },
+    "int 1": {
+      "Lax, WriteDouble": "01",
+      "Lax, shortest float": "01",
+      "Strict, WriteDouble": "01",
+      "Strict, shortest float": "01",
+      "Canonical, WriteDouble": "01",
+      "Canonical, shortest float": "01",
+      "Ctap2Canonical, WriteDouble": "01",
+      "Ctap2Canonical, shortest float": "01"
+    },
+    "int 10": {
+      "Lax, WriteDouble": "0a",
+      "Lax, shortest float": "0a",
+      "Strict, WriteDouble": "0a",
+      "Strict, shortest float": "0a",
+      "Canonical, WriteDouble": "0a",
+      "Canonical, shortest float": "0a",
+      "Ctap2Canonical, WriteDouble": "0a",
+      "Ctap2Canonical, shortest float": "0a"
+    },
+    "int 23": {
+      "Lax, WriteDouble": "17",
+      "Lax, shortest float": "17",
+      "Strict, WriteDouble": "17",
+      "Strict, shortest float": "17",
+      "Canonical, WriteDouble": "17",
+      "Canonical, shortest float": "17",
+      "Ctap2Canonical, WriteDouble": "17",
+      "Ctap2Canonical, shortest float": "17"
+    },
+    "int 24": {
+      "Lax, WriteDouble": "1818",
+      "Lax, shortest float": "1818",
+      "Strict, WriteDouble": "1818",
+      "Strict, shortest float": "1818",
+      "Canonical, WriteDouble": "1818",
+      "Canonical, shortest float": "1818",
+      "Ctap2Canonical, WriteDouble": "1818",
+      "Ctap2Canonical, shortest float": "1818"
+    },
+    "int 25": {
+      "Lax, WriteDouble": "1819",
+      "Lax, shortest float": "1819",
+      "Strict, WriteDouble": "1819",
+      "Strict, shortest float": "1819",
+      "Canonical, WriteDouble": "1819",
+      "Canonical, shortest float": "1819",
+      "Ctap2Canonical, WriteDouble": "1819",
+      "Ctap2Canonical, shortest float": "1819"
+    },
+    "int 100": {
+      "Lax, WriteDouble": "1864",
+      "Lax, shortest float": "1864",
+      "Strict, WriteDouble": "1864",
+      "Strict, shortest float": "1864",
+      "Canonical, WriteDouble": "1864",
+      "Canonical, shortest float": "1864",
+      "Ctap2Canonical, WriteDouble": "1864",
+      "Ctap2Canonical, shortest float": "1864"
+    },
+    "int 255": {
+      "Lax, WriteDouble": "18ff",
+      "Lax, shortest float": "18ff",
+      "Strict, WriteDouble": "18ff",
+      "Strict, shortest float": "18ff",
+      "Canonical, WriteDouble": "18ff",
+      "Canonical, shortest float": "18ff",
+      "Ctap2Canonical, WriteDouble": "18ff",
+      "Ctap2Canonical, shortest float": "18ff"
+    },
+    "int 256": {
+      "Lax, WriteDouble": "190100",
+      "Lax, shortest float": "190100",
+      "Strict, WriteDouble": "190100",
+      "Strict, shortest float": "190100",
+      "Canonical, WriteDouble": "190100",
+      "Canonical, shortest float": "190100",
+      "Ctap2Canonical, WriteDouble": "190100",
+      "Ctap2Canonical, shortest float": "190100"
+    },
+    "int 1000": {
+      "Lax, WriteDouble": "1903e8",
+      "Lax, shortest float": "1903e8",
+      "Strict, WriteDouble": "1903e8",
+      "Strict, shortest float": "1903e8",
+      "Canonical, WriteDouble": "1903e8",
+      "Canonical, shortest float": "1903e8",
+      "Ctap2Canonical, WriteDouble": "1903e8",
+      "Ctap2Canonical, shortest float": "1903e8"
+    },
+    "int 65535": {
+      "Lax, WriteDouble": "19ffff",
+      "Lax, shortest float": "19ffff",
+      "Strict, WriteDouble": "19ffff",
+      "Strict, shortest float": "19ffff",
+      "Canonical, WriteDouble": "19ffff",
+      "Canonical, shortest float": "19ffff",
+      "Ctap2Canonical, WriteDouble": "19ffff",
+      "Ctap2Canonical, shortest float": "19ffff"
+    },
+    "int 65536": {
+      "Lax, WriteDouble": "1a00010000",
+      "Lax, shortest float": "1a00010000",
+      "Strict, WriteDouble": "1a00010000",
+      "Strict, shortest float": "1a00010000",
+      "Canonical, WriteDouble": "1a00010000",
+      "Canonical, shortest float": "1a00010000",
+      "Ctap2Canonical, WriteDouble": "1a00010000",
+      "Ctap2Canonical, shortest float": "1a00010000"
+    },
+    "int 1000000": {
+      "Lax, WriteDouble": "1a000f4240",
+      "Lax, shortest float": "1a000f4240",
+      "Strict, WriteDouble": "1a000f4240",
+      "Strict, shortest float": "1a000f4240",
+      "Canonical, WriteDouble": "1a000f4240",
+      "Canonical, shortest float": "1a000f4240",
+      "Ctap2Canonical, WriteDouble": "1a000f4240",
+      "Ctap2Canonical, shortest float": "1a000f4240"
+    },
+    "int 4294967295": {
+      "Lax, WriteDouble": "1affffffff",
+      "Lax, shortest float": "1affffffff",
+      "Strict, WriteDouble": "1affffffff",
+      "Strict, shortest float": "1affffffff",
+      "Canonical, WriteDouble": "1affffffff",
+      "Canonical, shortest float": "1affffffff",
+      "Ctap2Canonical, WriteDouble": "1affffffff",
+      "Ctap2Canonical, shortest float": "1affffffff"
+    },
+    "int 4294967296": {
+      "Lax, WriteDouble": "1b0000000100000000",
+      "Lax, shortest float": "1b0000000100000000",
+      "Strict, WriteDouble": "1b0000000100000000",
+      "Strict, shortest float": "1b0000000100000000",
+      "Canonical, WriteDouble": "1b0000000100000000",
+      "Canonical, shortest float": "1b0000000100000000",
+      "Ctap2Canonical, WriteDouble": "1b0000000100000000",
+      "Ctap2Canonical, shortest float": "1b0000000100000000"
+    },
+    "int 1000000000000": {
+      "Lax, WriteDouble": "1b000000e8d4a51000",
+      "Lax, shortest float": "1b000000e8d4a51000",
+      "Strict, WriteDouble": "1b000000e8d4a51000",
+      "Strict, shortest float": "1b000000e8d4a51000",
+      "Canonical, WriteDouble": "1b000000e8d4a51000",
+      "Canonical, shortest float": "1b000000e8d4a51000",
+      "Ctap2Canonical, WriteDouble": "1b000000e8d4a51000",
+      "Ctap2Canonical, shortest float": "1b000000e8d4a51000"
+    },
+    "int 18446744073709551615": {
+      "Lax, WriteDouble": "1bffffffffffffffff",
+      "Lax, shortest float": "1bffffffffffffffff",
+      "Strict, WriteDouble": "1bffffffffffffffff",
+      "Strict, shortest float": "1bffffffffffffffff",
+      "Canonical, WriteDouble": "1bffffffffffffffff",
+      "Canonical, shortest float": "1bffffffffffffffff",
+      "Ctap2Canonical, WriteDouble": "1bffffffffffffffff",
+      "Ctap2Canonical, shortest float": "1bffffffffffffffff"
+    },
+    "int -1": {
+      "Lax, WriteDouble": "20",
+      "Lax, shortest float": "20",
+      "Strict, WriteDouble": "20",
+      "Strict, shortest float": "20",
+      "Canonical, WriteDouble": "20",
+      "Canonical, shortest float": "20",
+      "Ctap2Canonical, WriteDouble": "20",
+      "Ctap2Canonical, shortest float": "20"
+    },
+    "int -10": {
+      "Lax, WriteDouble": "29",
+      "Lax, shortest float": "29",
+      "Strict, WriteDouble": "29",
+      "Strict, shortest float": "29",
+      "Canonical, WriteDouble": "29",
+      "Canonical, shortest float": "29",
+      "Ctap2Canonical, WriteDouble": "29",
+      "Ctap2Canonical, shortest float": "29"
+    },
+    "int -24": {
+      "Lax, WriteDouble": "37",
+      "Lax, shortest float": "37",
+      "Strict, WriteDouble": "37",
+      "Strict, shortest float": "37",
+      "Canonical, WriteDouble": "37",
+      "Canonical, shortest float": "37",
+      "Ctap2Canonical, WriteDouble": "37",
+      "Ctap2Canonical, shortest float": "37"
+    },
+    "int -25": {
+      "Lax, WriteDouble": "3818",
+      "Lax, shortest float": "3818",
+      "Strict, WriteDouble": "3818",
+      "Strict, shortest float": "3818",
+      "Canonical, WriteDouble": "3818",
+      "Canonical, shortest float": "3818",
+      "Ctap2Canonical, WriteDouble": "3818",
+      "Ctap2Canonical, shortest float": "3818"
+    },
+    "int -100": {
+      "Lax, WriteDouble": "3863",
+      "Lax, shortest float": "3863",
+      "Strict, WriteDouble": "3863",
+      "Strict, shortest float": "3863",
+      "Canonical, WriteDouble": "3863",
+      "Canonical, shortest float": "3863",
+      "Ctap2Canonical, WriteDouble": "3863",
+      "Ctap2Canonical, shortest float": "3863"
+    },
+    "int -1000": {
+      "Lax, WriteDouble": "3903e7",
+      "Lax, shortest float": "3903e7",
+      "Strict, WriteDouble": "3903e7",
+      "Strict, shortest float": "3903e7",
+      "Canonical, WriteDouble": "3903e7",
+      "Canonical, shortest float": "3903e7",
+      "Ctap2Canonical, WriteDouble": "3903e7",
+      "Ctap2Canonical, shortest float": "3903e7"
+    },
+    "int -9223372036854775808": {
+      "Lax, WriteDouble": "3b7fffffffffffffff",
+      "Lax, shortest float": "3b7fffffffffffffff",
+      "Strict, WriteDouble": "3b7fffffffffffffff",
+      "Strict, shortest float": "3b7fffffffffffffff",
+      "Canonical, WriteDouble": "3b7fffffffffffffff",
+      "Canonical, shortest float": "3b7fffffffffffffff",
+      "Ctap2Canonical, WriteDouble": "3b7fffffffffffffff",
+      "Ctap2Canonical, shortest float": "3b7fffffffffffffff"
+    },
+    "int -2^64": {
+      "Lax, WriteDouble": "3bffffffffffffffff",
+      "Lax, shortest float": "3bffffffffffffffff",
+      "Strict, WriteDouble": "3bffffffffffffffff",
+      "Strict, shortest float": "3bffffffffffffffff",
+      "Canonical, WriteDouble": "3bffffffffffffffff",
+      "Canonical, shortest float": "3bffffffffffffffff",
+      "Ctap2Canonical, WriteDouble": "3bffffffffffffffff",
+      "Ctap2Canonical, shortest float": "3bffffffffffffffff"
+    },
+    "float 0.0": {
+      "Lax, WriteDouble": "f90000",
+      "Lax, shortest float": "f90000",
+      "Strict, WriteDouble": "f90000",
+      "Strict, shortest float": "f90000",
+      "Canonical, WriteDouble": "f90000",
+      "Canonical, shortest float": "f90000",
+      "Ctap2Canonical, WriteDouble": "fb0000000000000000",
+      "Ctap2Canonical, shortest float": "f90000"
+    },
+    "float -0.0": {
+      "Lax, WriteDouble": "f98000",
+      "Lax, shortest float": "f98000",
+      "Strict, WriteDouble": "f98000",
+      "Strict, shortest float": "f98000",
+      "Canonical, WriteDouble": "f98000",
+      "Canonical, shortest float": "f98000",
+      "Ctap2Canonical, WriteDouble": "fb8000000000000000",
+      "Ctap2Canonical, shortest float": "f98000"
+    },
+    "float 1.0": {
+      "Lax, WriteDouble": "f93c00",
+      "Lax, shortest float": "f93c00",
+      "Strict, WriteDouble": "f93c00",
+      "Strict, shortest float": "f93c00",
+      "Canonical, WriteDouble": "f93c00",
+      "Canonical, shortest float": "f93c00",
+      "Ctap2Canonical, WriteDouble": "fb3ff0000000000000",
+      "Ctap2Canonical, shortest float": "f93c00"
+    },
+    "float 1.1": {
+      "Lax, WriteDouble": "fb3ff199999999999a",
+      "Lax, shortest float": "fb3ff199999999999a",
+      "Strict, WriteDouble": "fb3ff199999999999a",
+      "Strict, shortest float": "fb3ff199999999999a",
+      "Canonical, WriteDouble": "fb3ff199999999999a",
+      "Canonical, shortest float": "fb3ff199999999999a",
+      "Ctap2Canonical, WriteDouble": "fb3ff199999999999a",
+      "Ctap2Canonical, shortest float": "fb3ff199999999999a"
+    },
+    "float 1.5": {
+      "Lax, WriteDouble": "f93e00",
+      "Lax, shortest float": "f93e00",
+      "Strict, WriteDouble": "f93e00",
+      "Strict, shortest float": "f93e00",
+      "Canonical, WriteDouble": "f93e00",
+      "Canonical, shortest float": "f93e00",
+      "Ctap2Canonical, WriteDouble": "fb3ff8000000000000",
+      "Ctap2Canonical, shortest float": "f93e00"
+    },
+    "float 65504.0": {
+      "Lax, WriteDouble": "f97bff",
+      "Lax, shortest float": "f97bff",
+      "Strict, WriteDouble": "f97bff",
+      "Strict, shortest float": "f97bff",
+      "Canonical, WriteDouble": "f97bff",
+      "Canonical, shortest float": "f97bff",
+      "Ctap2Canonical, WriteDouble": "fb40effc0000000000",
+      "Ctap2Canonical, shortest float": "f97bff"
+    },
+    "float 100000.0": {
+      "Lax, WriteDouble": "fa47c35000",
+      "Lax, shortest float": "fa47c35000",
+      "Strict, WriteDouble": "fa47c35000",
+      "Strict, shortest float": "fa47c35000",
+      "Canonical, WriteDouble": "fa47c35000",
+      "Canonical, shortest float": "fa47c35000",
+      "Ctap2Canonical, WriteDouble": "fb40f86a0000000000",
+      "Ctap2Canonical, shortest float": "fa47c35000"
+    },
+    "float 3.4028234663852886e\u002B38": {
+      "Lax, WriteDouble": "fa7f7fffff",
+      "Lax, shortest float": "fa7f7fffff",
+      "Strict, WriteDouble": "fa7f7fffff",
+      "Strict, shortest float": "fa7f7fffff",
+      "Canonical, WriteDouble": "fa7f7fffff",
+      "Canonical, shortest float": "fa7f7fffff",
+      "Ctap2Canonical, WriteDouble": "fb47efffffe0000000",
+      "Ctap2Canonical, shortest float": "fa7f7fffff"
+    },
+    "float 1e\u002B300": {
+      "Lax, WriteDouble": "fb7e37e43c8800759c",
+      "Lax, shortest float": "fb7e37e43c8800759c",
+      "Strict, WriteDouble": "fb7e37e43c8800759c",
+      "Strict, shortest float": "fb7e37e43c8800759c",
+      "Canonical, WriteDouble": "fb7e37e43c8800759c",
+      "Canonical, shortest float": "fb7e37e43c8800759c",
+      "Ctap2Canonical, WriteDouble": "fb7e37e43c8800759c",
+      "Ctap2Canonical, shortest float": "fb7e37e43c8800759c"
+    },
+    "float 5.960464477539063e-08": {
+      "Lax, WriteDouble": "f90001",
+      "Lax, shortest float": "f90001",
+      "Strict, WriteDouble": "f90001",
+      "Strict, shortest float": "f90001",
+      "Canonical, WriteDouble": "f90001",
+      "Canonical, shortest float": "f90001",
+      "Ctap2Canonical, WriteDouble": "fb3e70000000000000",
+      "Ctap2Canonical, shortest float": "f90001"
+    },
+    "float 6.103515625e-05": {
+      "Lax, WriteDouble": "f90400",
+      "Lax, shortest float": "f90400",
+      "Strict, WriteDouble": "f90400",
+      "Strict, shortest float": "f90400",
+      "Canonical, WriteDouble": "f90400",
+      "Canonical, shortest float": "f90400",
+      "Ctap2Canonical, WriteDouble": "fb3f10000000000000",
+      "Ctap2Canonical, shortest float": "f90400"
+    },
+    "float -4.0": {
+      "Lax, WriteDouble": "f9c400",
+      "Lax, shortest float": "f9c400",
+      "Strict, WriteDouble": "f9c400",
+      "Strict, shortest float": "f9c400",
+      "Canonical, WriteDouble": "f9c400",
+      "Canonical, shortest float": "f9c400",
+      "Ctap2Canonical, WriteDouble": "fbc010000000000000",
+      "Ctap2Canonical, shortest float": "f9c400"
+    },
+    "float -4.1": {
+      "Lax, WriteDouble": "fbc010666666666666",
+      "Lax, shortest float": "fbc010666666666666",
+      "Strict, WriteDouble": "fbc010666666666666",
+      "Strict, shortest float": "fbc010666666666666",
+      "Canonical, WriteDouble": "fbc010666666666666",
+      "Canonical, shortest float": "fbc010666666666666",
+      "Ctap2Canonical, WriteDouble": "fbc010666666666666",
+      "Ctap2Canonical, shortest float": "fbc010666666666666"
+    },
+    "float inf": {
+      "Lax, WriteDouble": "f97c00",
+      "Lax, shortest float": "f97c00",
+      "Strict, WriteDouble": "f97c00",
+      "Strict, shortest float": "f97c00",
+      "Canonical, WriteDouble": "f97c00",
+      "Canonical, shortest float": "f97c00",
+      "Ctap2Canonical, WriteDouble": "fb7ff0000000000000",
+      "Ctap2Canonical, shortest float": "f97c00"
+    },
+    "float -inf": {
+      "Lax, WriteDouble": "f9fc00",
+      "Lax, shortest float": "f9fc00",
+      "Strict, WriteDouble": "f9fc00",
+      "Strict, shortest float": "f9fc00",
+      "Canonical, WriteDouble": "f9fc00",
+      "Canonical, shortest float": "f9fc00",
+      "Ctap2Canonical, WriteDouble": "fbfff0000000000000",
+      "Ctap2Canonical, shortest float": "f9fc00"
+    },
+    "float 2345678.25": {
+      "Lax, WriteDouble": "fa4a0f2b39",
+      "Lax, shortest float": "fa4a0f2b39",
+      "Strict, WriteDouble": "fa4a0f2b39",
+      "Strict, shortest float": "fa4a0f2b39",
+      "Canonical, WriteDouble": "fa4a0f2b39",
+      "Canonical, shortest float": "fa4a0f2b39",
+      "Ctap2Canonical, WriteDouble": "fb4141e56720000000",
+      "Ctap2Canonical, shortest float": "fa4a0f2b39"
+    },
+    "float 1.2": {
+      "Lax, WriteDouble": "fb3ff3333333333333",
+      "Lax, shortest float": "fb3ff3333333333333",
+      "Strict, WriteDouble": "fb3ff3333333333333",
+      "Strict, shortest float": "fb3ff3333333333333",
+      "Canonical, WriteDouble": "fb3ff3333333333333",
+      "Canonical, shortest float": "fb3ff3333333333333",
+      "Ctap2Canonical, WriteDouble": "fb3ff3333333333333",
+      "Ctap2Canonical, shortest float": "fb3ff3333333333333"
+    },
+    "float 42.0": {
+      "Lax, WriteDouble": "f95140",
+      "Lax, shortest float": "f95140",
+      "Strict, WriteDouble": "f95140",
+      "Strict, shortest float": "f95140",
+      "Canonical, WriteDouble": "f95140",
+      "Canonical, shortest float": "f95140",
+      "Ctap2Canonical, WriteDouble": "fb4045000000000000",
+      "Ctap2Canonical, shortest float": "f95140"
+    },
+    "float 2345678.0": {
+      "Lax, WriteDouble": "fa4a0f2b38",
+      "Lax, shortest float": "fa4a0f2b38",
+      "Strict, WriteDouble": "fa4a0f2b38",
+      "Strict, shortest float": "fa4a0f2b38",
+      "Canonical, WriteDouble": "fa4a0f2b38",
+      "Canonical, shortest float": "fa4a0f2b38",
+      "Ctap2Canonical, WriteDouble": "fb4141e56700000000",
+      "Ctap2Canonical, shortest float": "fa4a0f2b38"
+    },
+    "float -2345678.0": {
+      "Lax, WriteDouble": "faca0f2b38",
+      "Lax, shortest float": "faca0f2b38",
+      "Strict, WriteDouble": "faca0f2b38",
+      "Strict, shortest float": "faca0f2b38",
+      "Canonical, WriteDouble": "faca0f2b38",
+      "Canonical, shortest float": "faca0f2b38",
+      "Ctap2Canonical, WriteDouble": "fbc141e56700000000",
+      "Ctap2Canonical, shortest float": "faca0f2b38"
+    },
+    "float 1.401298464324817e-45": {
+      "Lax, WriteDouble": "fa00000001",
+      "Lax, shortest float": "fa00000001",
+      "Strict, WriteDouble": "fa00000001",
+      "Strict, shortest float": "fa00000001",
+      "Canonical, WriteDouble": "fa00000001",
+      "Canonical, shortest float": "fa00000001",
+      "Ctap2Canonical, WriteDouble": "fb36a0000000000000",
+      "Ctap2Canonical, shortest float": "fa00000001"
+    },
+    "float 5e-324": {
+      "Lax, WriteDouble": "fb0000000000000001",
+      "Lax, shortest float": "fb0000000000000001",
+      "Strict, WriteDouble": "fb0000000000000001",
+      "Strict, shortest float": "fb0000000000000001",
+      "Canonical, WriteDouble": "fb0000000000000001",
+      "Canonical, shortest float": "fb0000000000000001",
+      "Ctap2Canonical, WriteDouble": "fb0000000000000001",
+      "Ctap2Canonical, shortest float": "fb0000000000000001"
+    },
+    "float 2.2250738585072014e-308": {
+      "Lax, WriteDouble": "fb0010000000000000",
+      "Lax, shortest float": "fb0010000000000000",
+      "Strict, WriteDouble": "fb0010000000000000",
+      "Strict, shortest float": "fb0010000000000000",
+      "Canonical, WriteDouble": "fb0010000000000000",
+      "Canonical, shortest float": "fb0010000000000000",
+      "Ctap2Canonical, WriteDouble": "fb0010000000000000",
+      "Ctap2Canonical, shortest float": "fb0010000000000000"
+    },
+    "float 33554430.0": {
+      "Lax, WriteDouble": "fa4bffffff",
+      "Lax, shortest float": "fa4bffffff",
+      "Strict, WriteDouble": "fa4bffffff",
+      "Strict, shortest float": "fa4bffffff",
+      "Canonical, WriteDouble": "fa4bffffff",
+      "Canonical, shortest float": "fa4bffffff",
+      "Ctap2Canonical, WriteDouble": "fb417fffffe0000000",
+      "Ctap2Canonical, shortest float": "fa4bffffff"
+    },
+    "float -9.223372036854775e\u002B18": {
+      "Lax, WriteDouble": "fbc3dfffffffffffff",
+      "Lax, shortest float": "fbc3dfffffffffffff",
+      "Strict, WriteDouble": "fbc3dfffffffffffff",
+      "Strict, shortest float": "fbc3dfffffffffffff",
+      "Canonical, WriteDouble": "fbc3dfffffffffffff",
+      "Canonical, shortest float": "fbc3dfffffffffffff",
+      "Ctap2Canonical, WriteDouble": "fbc3dfffffffffffff",
+      "Ctap2Canonical, shortest float": "fbc3dfffffffffffff"
+    },
+    "float 1.844674407370955e\u002B19": {
+      "Lax, WriteDouble": "fb43efffffffffffff",
+      "Lax, shortest float": "fb43efffffffffffff",
+      "Strict, WriteDouble": "fb43efffffffffffff",
+      "Strict, shortest float": "fb43efffffffffffff",
+      "Canonical, WriteDouble": "fb43efffffffffffff",
+      "Canonical, shortest float": "fb43efffffffffffff",
+      "Ctap2Canonical, WriteDouble": "fb43efffffffffffff",
+      "Ctap2Canonical, shortest float": "fb43efffffffffffff"
+    },
+    "float 1.8446744073709552e\u002B19": {
+      "Lax, WriteDouble": "fa5f800000",
+      "Lax, shortest float": "fa5f800000",
+      "Strict, WriteDouble": "fa5f800000",
+      "Strict, shortest float": "fa5f800000",
+      "Canonical, WriteDouble": "fa5f800000",
+      "Canonical, shortest float": "fa5f800000",
+      "Ctap2Canonical, WriteDouble": "fb43f0000000000000",
+      "Ctap2Canonical, shortest float": "fa5f800000"
+    },
+    "float -1.8446742974197924e\u002B19": {
+      "Lax, WriteDouble": "fadf7fffff",
+      "Lax, shortest float": "fadf7fffff",
+      "Strict, WriteDouble": "fadf7fffff",
+      "Strict, shortest float": "fadf7fffff",
+      "Canonical, WriteDouble": "fadf7fffff",
+      "Canonical, shortest float": "fadf7fffff",
+      "Ctap2Canonical, WriteDouble": "fbc3efffffe0000000",
+      "Ctap2Canonical, shortest float": "fadf7fffff"
+    },
+    "float 3.402823466385289e\u002B38": {
+      "Lax, WriteDouble": "fb47efffffe0000001",
+      "Lax, shortest float": "fb47efffffe0000001",
+      "Strict, WriteDouble": "fb47efffffe0000001",
+      "Strict, shortest float": "fb47efffffe0000001",
+      "Canonical, WriteDouble": "fb47efffffe0000001",
+      "Canonical, shortest float": "fb47efffffe0000001",
+      "Ctap2Canonical, WriteDouble": "fb47efffffe0000001",
+      "Ctap2Canonical, shortest float": "fb47efffffe0000001"
+    },
+    "float 1.7976931348623157e\u002B308": {
+      "Lax, WriteDouble": "fb7fefffffffffffff",
+      "Lax, shortest float": "fb7fefffffffffffff",
+      "Strict, WriteDouble": "fb7fefffffffffffff",
+      "Strict, shortest float": "fb7fefffffffffffff",
+      "Canonical, WriteDouble": "fb7fefffffffffffff",
+      "Canonical, shortest float": "fb7fefffffffffffff",
+      "Ctap2Canonical, WriteDouble": "fb7fefffffffffffff",
+      "Ctap2Canonical, shortest float": "fb7fefffffffffffff"
+    },
+    "float 12.0": {
+      "Lax, WriteDouble": "f94a00",
+      "Lax, shortest float": "f94a00",
+      "Strict, WriteDouble": "f94a00",
+      "Strict, shortest float": "f94a00",
+      "Canonical, WriteDouble": "f94a00",
+      "Canonical, shortest float": "f94a00",
+      "Ctap2Canonical, WriteDouble": "fb4028000000000000",
+      "Ctap2Canonical, shortest float": "f94a00"
+    },
+    "float -9.223372036854776e\u002B18": {
+      "Lax, WriteDouble": "fadf000000",
+      "Lax, shortest float": "fadf000000",
+      "Strict, WriteDouble": "fadf000000",
+      "Strict, shortest float": "fadf000000",
+      "Canonical, WriteDouble": "fadf000000",
+      "Canonical, shortest float": "fadf000000",
+      "Ctap2Canonical, WriteDouble": "fbc3e0000000000000",
+      "Ctap2Canonical, shortest float": "fadf000000"
+    },
+    "float NaN 7ff8000000000000": {
+      "Lax, WriteDouble": "f97e00",
+      "Lax, shortest float": "f97e00",
+      "Strict, WriteDouble": "f97e00",
+      "Strict, shortest float": "f97e00",
+      "Canonical, WriteDouble": "f97e00",
+      "Canonical, shortest float": "f97e00",
+      "Ctap2Canonical, WriteDouble": "fb7ff8000000000000",
+      "Ctap2Canonical, shortest float": "f97e00"
+    },
+    "float NaN fff8000000000000": {
+      "Lax, WriteDouble": "f97e00",
+      "Lax, shortest float": "f97e00",
+      "Strict, WriteDouble": "f97e00",
+      "Strict, shortest float": "f97e00",
+      "Canonical, WriteDouble": "f97e00",
+      "Canonical, shortest float": "f97e00",
+      "Ctap2Canonical, WriteDouble": "fbfff8000000000000",
+      "Ctap2Canonical, shortest float": "f9fe00"
+    },
+    "float NaN 7ff8000000000001": {
+      "Lax, WriteDouble": "f97e00",
+      "Lax, shortest float": "f97e00",
+      "Strict, WriteDouble": "f97e00",
+      "Strict, shortest float": "f97e00",
+      "Canonical, WriteDouble": "f97e00",
+      "Canonical, shortest float": "f97e00",
+      "Ctap2Canonical, WriteDouble": "fb7ff8000000000001",
+      "Ctap2Canonical, shortest float": "fb7ff8000000000001"
+    },
+    "float NaN 7ff8000020000000": {
+      "Lax, WriteDouble": "f97e00",
+      "Lax, shortest float": "f97e00",
+      "Strict, WriteDouble": "f97e00",
+      "Strict, shortest float": "f97e00",
+      "Canonical, WriteDouble": "f97e00",
+      "Canonical, shortest float": "f97e00",
+      "Ctap2Canonical, WriteDouble": "fb7ff8000020000000",
+      "Ctap2Canonical, shortest float": "fa7fc00001"
+    },
+    "float NaN 7ff0000000000001": {
+      "Lax, WriteDouble": "f97e00",
+      "Lax, shortest float": "f97e00",
+      "Strict, WriteDouble": "f97e00",
+      "Strict, shortest float": "f97e00",
+      "Canonical, WriteDouble": "f97e00",
+      "Canonical, shortest float": "f97e00",
+      "Ctap2Canonical, WriteDouble": "fb7ff0000000000001",
+      "Ctap2Canonical, shortest float": "fb7ff0000000000001"
+    },
+    "text empty": {
+      "Lax, WriteDouble": "60",
+      "Lax, shortest float": "60",
+      "Strict, WriteDouble": "60",
+      "Strict, shortest float": "60",
+      "Canonical, WriteDouble": "60",
+      "Canonical, shortest float": "60",
+      "Ctap2Canonical, WriteDouble": "60",
+      "Ctap2Canonical, shortest float": "60"
+    },
+    "text a": {
+      "Lax, WriteDouble": "6161",
+      "Lax, shortest float": "6161",
+      "Strict, WriteDouble": "6161",
+      "Strict, shortest float": "6161",
+      "Canonical, WriteDouble": "6161",
+      "Canonical, shortest float": "6161",
+      "Ctap2Canonical, WriteDouble": "6161",
+      "Ctap2Canonical, shortest float": "6161"
+    },
+    "text IETF": {
+      "Lax, WriteDouble": "6449455446",
+      "Lax, shortest float": "6449455446",
+      "Strict, WriteDouble": "6449455446",
+      "Strict, shortest float": "6449455446",
+      "Canonical, WriteDouble": "6449455446",
+      "Canonical, shortest float": "6449455446",
+      "Ctap2Canonical, WriteDouble": "6449455446",
+      "Ctap2Canonical, shortest float": "6449455446"
+    },
+    "text u00fc": {
+      "Lax, WriteDouble": "62c3bc",
+      "Lax, shortest float": "62c3bc",
+      "Strict, WriteDouble": "62c3bc",
+      "Strict, shortest float": "62c3bc",
+      "Canonical, WriteDouble": "62c3bc",
+      "Canonical, shortest float": "62c3bc",
+      "Ctap2Canonical, WriteDouble": "62c3bc",
+      "Ctap2Canonical, shortest float": "62c3bc"
+    },
+    "text u6c34": {
+      "Lax, WriteDouble": "63e6b0b4",
+      "Lax, shortest float": "63e6b0b4",
+      "Strict, WriteDouble": "63e6b0b4",
+      "Strict, shortest float": "63e6b0b4",
+      "Canonical, WriteDouble": "63e6b0b4",
+      "Canonical, shortest float": "63e6b0b4",
+      "Ctap2Canonical, WriteDouble": "63e6b0b4",
+      "Ctap2Canonical, shortest float": "63e6b0b4"
+    },
+    "text U\u002B10151": {
+      "Lax, WriteDouble": "64f0908591",
+      "Lax, shortest float": "64f0908591",
+      "Strict, WriteDouble": "64f0908591",
+      "Strict, shortest float": "64f0908591",
+      "Canonical, WriteDouble": "64f0908591",
+      "Canonical, shortest float": "64f0908591",
+      "Ctap2Canonical, WriteDouble": "64f0908591",
+      "Ctap2Canonical, shortest float": "64f0908591"
+    },
+    "text non-NFC e\u002BU\u002B0301": {
+      "Lax, WriteDouble": "6365cc81",
+      "Lax, shortest float": "6365cc81",
+      "Strict, WriteDouble": "6365cc81",
+      "Strict, shortest float": "6365cc81",
+      "Canonical, WriteDouble": "6365cc81",
+      "Canonical, shortest float": "6365cc81",
+      "Ctap2Canonical, WriteDouble": "6365cc81",
+      "Ctap2Canonical, shortest float": "6365cc81"
+    },
+    "bytes empty": {
+      "Lax, WriteDouble": "40",
+      "Lax, shortest float": "40",
+      "Strict, WriteDouble": "40",
+      "Strict, shortest float": "40",
+      "Canonical, WriteDouble": "40",
+      "Canonical, shortest float": "40",
+      "Ctap2Canonical, WriteDouble": "40",
+      "Ctap2Canonical, shortest float": "40"
+    },
+    "bytes 01020304": {
+      "Lax, WriteDouble": "4401020304",
+      "Lax, shortest float": "4401020304",
+      "Strict, WriteDouble": "4401020304",
+      "Strict, shortest float": "4401020304",
+      "Canonical, WriteDouble": "4401020304",
+      "Canonical, shortest float": "4401020304",
+      "Ctap2Canonical, WriteDouble": "4401020304",
+      "Ctap2Canonical, shortest float": "4401020304"
+    },
+    "false": {
+      "Lax, WriteDouble": "f4",
+      "Lax, shortest float": "f4",
+      "Strict, WriteDouble": "f4",
+      "Strict, shortest float": "f4",
+      "Canonical, WriteDouble": "f4",
+      "Canonical, shortest float": "f4",
+      "Ctap2Canonical, WriteDouble": "f4",
+      "Ctap2Canonical, shortest float": "f4"
+    },
+    "true": {
+      "Lax, WriteDouble": "f5",
+      "Lax, shortest float": "f5",
+      "Strict, WriteDouble": "f5",
+      "Strict, shortest float": "f5",
+      "Canonical, WriteDouble": "f5",
+      "Canonical, shortest float": "f5",
+      "Ctap2Canonical, WriteDouble": "f5",
+      "Ctap2Canonical, shortest float": "f5"
+    },
+    "null": {
+      "Lax, WriteDouble": "f6",
+      "Lax, shortest float": "f6",
+      "Strict, WriteDouble": "f6",
+      "Strict, shortest float": "f6",
+      "Canonical, WriteDouble": "f6",
+      "Canonical, shortest float": "f6",
+      "Ctap2Canonical, WriteDouble": "f6",
+      "Ctap2Canonical, shortest float": "f6"
+    },
+    "array empty": {
+      "Lax, WriteDouble": "80",
+      "Lax, shortest float": "80",
+      "Strict, WriteDouble": "80",
+      "Strict, shortest float": "80",
+      "Canonical, WriteDouble": "80",
+      "Canonical, shortest float": "80",
+      "Ctap2Canonical, WriteDouble": "80",
+      "Ctap2Canonical, shortest float": "80"
+    },
+    "array nested": {
+      "Lax, WriteDouble": "8301820203820405",
+      "Lax, shortest float": "8301820203820405",
+      "Strict, WriteDouble": "8301820203820405",
+      "Strict, shortest float": "8301820203820405",
+      "Canonical, WriteDouble": "8301820203820405",
+      "Canonical, shortest float": "8301820203820405",
+      "Ctap2Canonical, WriteDouble": "8301820203820405",
+      "Ctap2Canonical, shortest float": "8301820203820405"
+    },
+    "array 25 items": {
+      "Lax, WriteDouble": "98190102030405060708090a0b0c0d0e0f101112131415161718181819",
+      "Lax, shortest float": "98190102030405060708090a0b0c0d0e0f101112131415161718181819",
+      "Strict, WriteDouble": "98190102030405060708090a0b0c0d0e0f101112131415161718181819",
+      "Strict, shortest float": "98190102030405060708090a0b0c0d0e0f101112131415161718181819",
+      "Canonical, WriteDouble": "98190102030405060708090a0b0c0d0e0f101112131415161718181819",
+      "Canonical, shortest float": "98190102030405060708090a0b0c0d0e0f101112131415161718181819",
+      "Ctap2Canonical, WriteDouble": "98190102030405060708090a0b0c0d0e0f101112131415161718181819",
+      "Ctap2Canonical, shortest float": "98190102030405060708090a0b0c0d0e0f101112131415161718181819"
+    },
+    "map empty": {
+      "Lax, WriteDouble": "a0",
+      "Lax, shortest float": "a0",
+      "Strict, WriteDouble": "a0",
+      "Strict, shortest float": "a0",
+      "Canonical, WriteDouble": "a0",
+      "Canonical, shortest float": "a0",
+      "Ctap2Canonical, WriteDouble": "a0",
+      "Ctap2Canonical, shortest float": "a0"
+    },
+    "tag 1 epoch int": {
+      "Lax, WriteDouble": "c11a514b67b0",
+      "Lax, shortest float": "c11a514b67b0",
+      "Strict, WriteDouble": "c11a514b67b0",
+      "Strict, shortest float": "c11a514b67b0",
+      "Canonical, WriteDouble": "c11a514b67b0",
+      "Canonical, shortest float": "c11a514b67b0",
+      "Ctap2Canonical, WriteDouble": "error: InvalidOperationException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support tagged values.",
+      "Ctap2Canonical, shortest float": "error: InvalidOperationException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support tagged values."
+    },
+    "tag 1 epoch float": {
+      "Lax, WriteDouble": "c1fb41d452d9ec200000",
+      "Lax, shortest float": "c1fb41d452d9ec200000",
+      "Strict, WriteDouble": "c1fb41d452d9ec200000",
+      "Strict, shortest float": "c1fb41d452d9ec200000",
+      "Canonical, WriteDouble": "c1fb41d452d9ec200000",
+      "Canonical, shortest float": "c1fb41d452d9ec200000",
+      "Ctap2Canonical, WriteDouble": "error: InvalidOperationException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support tagged values.",
+      "Ctap2Canonical, shortest float": "error: InvalidOperationException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support tagged values."
+    },
+    "tag 32 uri": {
+      "Lax, WriteDouble": "d82076687474703a2f2f7777772e6578616d706c652e636f6d",
+      "Lax, shortest float": "d82076687474703a2f2f7777772e6578616d706c652e636f6d",
+      "Strict, WriteDouble": "d82076687474703a2f2f7777772e6578616d706c652e636f6d",
+      "Strict, shortest float": "d82076687474703a2f2f7777772e6578616d706c652e636f6d",
+      "Canonical, WriteDouble": "d82076687474703a2f2f7777772e6578616d706c652e636f6d",
+      "Canonical, shortest float": "d82076687474703a2f2f7777772e6578616d706c652e636f6d",
+      "Ctap2Canonical, WriteDouble": "error: InvalidOperationException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support tagged values.",
+      "Ctap2Canonical, shortest float": "error: InvalidOperationException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support tagged values."
+    },
+    "map uint keys reversed": {
+      "Lax, WriteDouble": "a203040102",
+      "Lax, shortest float": "a203040102",
+      "Strict, WriteDouble": "a203040102",
+      "Strict, shortest float": "a203040102",
+      "Canonical, WriteDouble": "a201020304",
+      "Canonical, shortest float": "a201020304",
+      "Ctap2Canonical, WriteDouble": "a201020304",
+      "Ctap2Canonical, shortest float": "a201020304"
+    },
+    "map text keys reversed": {
+      "Lax, WriteDouble": "a56165614561646144616361436162614261616141",
+      "Lax, shortest float": "a56165614561646144616361436162614261616141",
+      "Strict, WriteDouble": "a56165614561646144616361436162614261616141",
+      "Strict, shortest float": "a56165614561646144616361436162614261616141",
+      "Canonical, WriteDouble": "a56161614161626142616361436164614461656145",
+      "Canonical, shortest float": "a56161614161626142616361436164614461656145",
+      "Ctap2Canonical, WriteDouble": "a56161614161626142616361436164614461656145",
+      "Ctap2Canonical, shortest float": "a56161614161626142616361436164614461656145"
+    },
+    "map uint keys spanning header sizes": {
+      "Lax, WriteDouble": "a41903e80018180017000000",
+      "Lax, shortest float": "a41903e80018180017000000",
+      "Strict, WriteDouble": "a41903e80018180017000000",
+      "Strict, shortest float": "a41903e80018180017000000",
+      "Canonical, WriteDouble": "a4000017001818001903e800",
+      "Canonical, shortest float": "a4000017001818001903e800",
+      "Ctap2Canonical, WriteDouble": "a4000017001818001903e800",
+      "Ctap2Canonical, shortest float": "a4000017001818001903e800"
+    },
+    "map 24 vs -1 (orders disagree)": {
+      "Lax, WriteDouble": "a22000181800",
+      "Lax, shortest float": "a22000181800",
+      "Strict, WriteDouble": "a22000181800",
+      "Strict, shortest float": "a22000181800",
+      "Canonical, WriteDouble": "a22000181800",
+      "Canonical, shortest float": "a22000181800",
+      "Ctap2Canonical, WriteDouble": "a21818002000",
+      "Ctap2Canonical, shortest float": "a21818002000"
+    },
+    "map 256 vs \u0022a\u0022 (orders disagree)": {
+      "Lax, WriteDouble": "a261610019010000",
+      "Lax, shortest float": "a261610019010000",
+      "Strict, WriteDouble": "a261610019010000",
+      "Strict, shortest float": "a261610019010000",
+      "Canonical, WriteDouble": "a261610019010000",
+      "Canonical, shortest float": "a261610019010000",
+      "Ctap2Canonical, WriteDouble": "a219010000616100",
+      "Ctap2Canonical, shortest float": "a219010000616100"
+    },
+    "map mixed key types": {
+      "Lax, WriteDouble": "a461610020000a00410000",
+      "Lax, shortest float": "a461610020000a00410000",
+      "Strict, WriteDouble": "a461610020000a00410000",
+      "Strict, shortest float": "a461610020000a00410000",
+      "Canonical, WriteDouble": "a40a002000410000616100",
+      "Canonical, shortest float": "a40a002000410000616100",
+      "Ctap2Canonical, WriteDouble": "a40a002000410000616100",
+      "Ctap2Canonical, shortest float": "a40a002000410000616100"
+    },
+    "map nested unsorted": {
+      "Lax, WriteDouble": "a26162a202000100616101",
+      "Lax, shortest float": "a26162a202000100616101",
+      "Strict, WriteDouble": "a26162a202000100616101",
+      "Strict, shortest float": "a26162a202000100616101",
+      "Canonical, WriteDouble": "a26161016162a201000200",
+      "Canonical, shortest float": "a26161016162a201000200",
+      "Ctap2Canonical, WriteDouble": "a26161016162a201000200",
+      "Ctap2Canonical, shortest float": "a26161016162a201000200"
+    },
+    "event envelope": {
+      "Lax, WriteDouble": "a60481a301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e000302f9c6000001031b00000199c82cc0000158221220abababababababababababababababababababababababababababababababab028258221220010101010101010101010101010101010101010101010101010101010101010158221220020202020202020202020202020202020202020202020202020202020202020205f93800",
+      "Lax, shortest float": "a60481a301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e000302f9c6000001031b00000199c82cc0000158221220abababababababababababababababababababababababababababababababab028258221220010101010101010101010101010101010101010101010101010101010101010158221220020202020202020202020202020202020202020202020202020202020202020205f93800",
+      "Strict, WriteDouble": "a60481a301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e000302f9c6000001031b00000199c82cc0000158221220abababababababababababababababababababababababababababababababab028258221220010101010101010101010101010101010101010101010101010101010101010158221220020202020202020202020202020202020202020202020202020202020202020205f93800",
+      "Strict, shortest float": "a60481a301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e000302f9c6000001031b00000199c82cc0000158221220abababababababababababababababababababababababababababababababab028258221220010101010101010101010101010101010101010101010101010101010101010158221220020202020202020202020202020202020202020202020202020202020202020205f93800",
+      "Canonical, WriteDouble": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02f9c60005f93800",
+      "Canonical, shortest float": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02f9c60005f93800",
+      "Ctap2Canonical, WriteDouble": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02fbc01800000000000005fb3fe0000000000000",
+      "Ctap2Canonical, shortest float": "a600010158221220abababababababababababababababababababababababababababababababab0282582212200101010101010101010101010101010101010101010101010101010101010101582212200202020202020202020202020202020202020202020202020202020202020202031b00000199c82cc0000481a3000301782b747261636b2f30313930613363316432653437613862396330643165326633613462356336642f6761696e02f9c60005f93800"
+    }
+  },
+  "decode": {
+    "control: sorted uint map": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "unsorted uint keys": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "reject: CborContentException: CBOR keys not sorted in accordance with conformance mode \u0027Canonical\u0027.",
+      "Ctap2Canonical": "reject: CborContentException: CBOR keys not sorted in accordance with conformance mode \u0027Ctap2Canonical\u0027."
+    },
+    "duplicate keys": {
+      "Lax": "accept",
+      "Strict": "reject: CborContentException: CBOR Conformance mode \u0027Strict\u0027 does not support duplicate keys.",
+      "Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Canonical\u0027 does not support duplicate keys.",
+      "Ctap2Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support duplicate keys."
+    },
+    "bytewise order {24, -1}": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "reject: CborContentException: CBOR keys not sorted in accordance with conformance mode \u0027Canonical\u0027.",
+      "Ctap2Canonical": "accept"
+    },
+    "length-first order {-1, 24}": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "reject: CborContentException: CBOR keys not sorted in accordance with conformance mode \u0027Ctap2Canonical\u0027."
+    },
+    "bytewise order {256, \u0022a\u0022}": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "reject: CborContentException: CBOR keys not sorted in accordance with conformance mode \u0027Canonical\u0027.",
+      "Ctap2Canonical": "accept"
+    },
+    "length-first order {\u0022a\u0022, 256}": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "reject: CborContentException: CBOR keys not sorted in accordance with conformance mode \u0027Ctap2Canonical\u0027."
+    },
+    "non-shortest int 0x1805": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Canonical\u0027 does not support non-canonical integer representations.",
+      "Ctap2Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support non-canonical integer representations."
+    },
+    "non-shortest int 0x190005": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Canonical\u0027 does not support non-canonical integer representations.",
+      "Ctap2Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support non-canonical integer representations."
+    },
+    "non-shortest length h\u002701\u0027 as 0x5801": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Canonical\u0027 does not support non-canonical integer representations.",
+      "Ctap2Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support non-canonical integer representations."
+    },
+    "indefinite array": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Canonical\u0027 does not support indefinite-length data items.",
+      "Ctap2Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support indefinite-length data items."
+    },
+    "indefinite map": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Canonical\u0027 does not support indefinite-length items.",
+      "Ctap2Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support indefinite-length items."
+    },
+    "indefinite text": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Canonical\u0027 does not support indefinite-length data items.",
+      "Ctap2Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support indefinite-length data items."
+    },
+    "1.5 as binary64": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "1.5 as binary32": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "Infinity as binary64": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "NaN as binary64": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "NaN with payload f97e01": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "NaN with payload faffc00001": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "-0.0": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "integral float 12.0": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "int -2^64": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "undefined": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "simple(16)": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "non-NFC text e\u002BU\u002B0301": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "accept"
+    },
+    "invalid UTF-8 text": {
+      "Lax": "accept",
+      "Strict": "reject: CborContentException: CBOR text string payload is not valid a UTF-8 encoding.",
+      "Canonical": "reject: CborContentException: CBOR text string payload is not valid a UTF-8 encoding.",
+      "Ctap2Canonical": "reject: CborContentException: CBOR text string payload is not valid a UTF-8 encoding."
+    },
+    "trailing bytes after item": {
+      "Lax": "reject: 1 trailing bytes",
+      "Strict": "reject: 1 trailing bytes",
+      "Canonical": "reject: 1 trailing bytes",
+      "Ctap2Canonical": "reject: 1 trailing bytes"
+    },
+    "truncated item": {
+      "Lax": "reject: CborContentException: Unexpected end of CBOR encoding data.",
+      "Strict": "reject: CborContentException: Unexpected end of CBOR encoding data.",
+      "Canonical": "reject: CborContentException: Unexpected end of CBOR encoding data.",
+      "Ctap2Canonical": "reject: CborContentException: Unexpected end of CBOR encoding data."
+    },
+    "tag 1 epoch int": {
+      "Lax": "accept",
+      "Strict": "accept",
+      "Canonical": "accept",
+      "Ctap2Canonical": "reject: CborContentException: CBOR Conformance mode \u0027Ctap2Canonical\u0027 does not support tagged values."
+    }
+  }
+}
