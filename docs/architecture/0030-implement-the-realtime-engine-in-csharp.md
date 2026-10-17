@@ -96,6 +96,19 @@ Available:
   - What it doesn't cover: driver-created callback threads, desktop hardware,
     Android, and iOS, where the whole app is a single NativeAOT image, so there is
     no second runtime.
+- Satori GC (same spike, `SATORI=1` in `run-matrix.sh` and `run-capture.sh`). This
+  is an experimental collector, packaged by the community as the MSBuild SDK
+  `PublishWithSatoriGC` (10.0.13-satori.38707290103.1). It replaces the runtime in
+  self-contained and NativeAOT publishes, with packs for Windows, Linux, macOS,
+  Android and iOS. Container results (25 s per row), with a no-load floor of 25
+  overruns: a managed capture thread in a Satori host had 30, 39 and 42 overruns
+  under allocation loads that gave 223, 248 and 1,200 on the stock runtime. In the
+  soak harness, total GC pause time at 200 MB/s fell from 2,237 ms to 134 ms per
+  15 s.
+  - What it shows: most collections no longer stop the real-time thread.
+  - What it doesn't show: any bound on pauses. Satori's reported maximum pause
+    (28–41 ms) does not tell you which threads were stopped. The results are from a
+    VM, and the collector is experimental.
 
 A clean run of N blocks bounds the xrun rate below about 3/N at 95% confidence
 (about 2.7 million blocks per hour). Run length therefore sets the claim: 2 hours
@@ -130,3 +143,10 @@ Required before acceptance:
 
 - The .NET GC gains a mode with bounded pauses, or a runtime regression changes
   pause behaviour.
+
+## Notes
+
+- 2026-10-17: The .NET runtime team opened dotnet/runtimelab#3316 (8 October 2026),
+  adding custom-GC support to an experimental runtimelab branch with Satori as the
+  first collector. This is relevant to the bounded-pause review trigger, but it is
+  not a product GC, and no pause bound has been published.

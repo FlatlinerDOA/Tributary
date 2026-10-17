@@ -4,3 +4,4 @@ target/
 BenchmarkDotNet.Artifacts/
 __pycache__/
 out/
+out-satori/

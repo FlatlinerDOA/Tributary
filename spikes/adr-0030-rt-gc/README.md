@@ -41,7 +41,8 @@ Close other applications and use a high-performance power plan.
 
 C# options: `--seconds`, `--load` (0–1), `--tracks` (200), `--alloc-threads` (0 = isolated),
 `--alloc-mbps` (total across threads, default 200, 0 = unthrottled), `--alloc-retain` (objects each allocating
-thread keeps live; 256 ≈ 8 MB, 4096 ≈ 128 MB), `--gc default|lowlatency|nogc`, `--rt-priority` (0 disables promotion).
+thread keeps live; 256 ≈ 8 MB, 4096 ≈ 128 MB), `--gc default|lowlatency|lowlatency-strict|nogc`
+(`lowlatency` = `SustainedLowLatency`, `lowlatency-strict` = `LowLatency`), `--rt-priority` (0 disables promotion).
 Rust takes `--seconds`, `--load`, `--tracks`, `--rt-priority`.
 
 ## Reading the output
@@ -82,6 +83,21 @@ Compare each `shim` row with the no-allocation row: equal overruns mean the host
 Not covered: a capture thread created by an audio driver and calling into the shim (here the shim creates the
 thread), iOS (the whole app is one NativeAOT image, so there is no second runtime), and Android.
 
+## Satori GC
+
+Both scripts take `SATORI=1` to repeat every C# row on a self-contained build that uses the experimental Satori GC,
+through the community MSBuild SDK `PublishWithSatoriGC` (version pinned in `csharp/Spike.csproj` and
+`capture-host/CaptureHost.csproj`). The SDK enables itself by default; `Directory.Build.props` turns it off so that
+only the `-p:UseSatoriGC=true` publishes in the scripts use it. The runtime line prints `satori=True` when it is active.
+
+```
+SATORI=1 ./run-matrix.sh 300
+SATORI=1 ./run-capture.sh 300
+```
+
+Satori reports `SustainedLowLatency` as `LowLatency`. Its `max_gc_pause_us` does not show which threads were
+stopped: in the container it reported 28–41 ms pauses that a managed capture thread barely felt.
+
 ## Status for ADR-0030 Evidence
 
 - Container (4 shared vCPU): unusable as evidence. Hypervisor steal causes xruns even in Rust under `SCHED_FIFO`.
@@ -90,5 +106,8 @@ thread), iOS (the whole app is one NativeAOT image, so there is no second runtim
 - `results/20261017T073051Z-capture.txt` (container, 30 s per row): shim capture overruns stayed at the
   no-allocation floor (29–33) under up to ~1,900 host GCs with pauses up to 188 ms; the same loop on a host
   thread went from 32 to 207, 293 and 1,457 as allocation pressure rose. `shim_gc0=0` throughout.
+- `results/20261017T080902Z-capture.txt` (container, 25 s per row, `SATORI=1`): no-load floor 24–26 overruns;
+  under allocation load a managed capture thread in a Satori host had 30, 39 and 42 overruns against 223, 248
+  and 1,200 on the stock runtime. The shim stayed at the floor with either host.
 - Still needed: agree pass thresholds, rerun this matrix on the desktop, 2 h go/no-go rows, then one 8 h soak of
   the chosen configuration (see the ADR's Evidence checklist). iOS/Android NativeAOT needs devices and is not covered by this harness.

@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- PublishWithSatoriGC enables itself by default; the spike opts in per publish with -p:UseSatoriGC=true. -->
+    <UseSatoriGC Condition="'$(UseSatoriGC)' == ''">false</UseSatoriGC>
+  </PropertyGroup>
+</Project>

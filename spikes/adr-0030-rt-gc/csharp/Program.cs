@@ -22,8 +22,9 @@ var allocClock = Stopwatch.StartNew();
 foreach (var t in allocThreads) t.Start();
 
 if (o.GcMode == "lowlatency") GCSettings.LatencyMode = GCLatencyMode.SustainedLowLatency;
+if (o.GcMode == "lowlatency-strict") GCSettings.LatencyMode = GCLatencyMode.LowLatency;
 if (o.GcMode == "nogc") GC.TryStartNoGCRegion(240_000_000);
-Console.WriteLine($"latency_mode={GCSettings.LatencyMode}");
+Console.WriteLine($"latency_mode={GCSettings.LatencyMode} satori={GC.GetConfigurationVariables().ContainsKey("SatoriGC")}");
 
 using var gcMonitor = new GcPauseMonitor();
 RunResult? result = null;
