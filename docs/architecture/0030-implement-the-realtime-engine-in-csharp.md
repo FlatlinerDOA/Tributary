@@ -74,17 +74,40 @@ narrower than in a full Rust core.
 
 ## Evidence
 
-Required before acceptance (spike):
+Available:
 
-- [ ] Engine process with 200 tracks of synthetic DSP, 64-sample buffer at 48 kHz,
-      running for 8 hours while a separate thread in the same process allocates
-      heavily to force GCs. Record xruns and the maximum GC suspension time.
+- Spike harness: [`spikes/adr-0030-rt-gc/`](../../spikes/adr-0030-rt-gc/). The same
+  synthetic workload in C# and Rust: deadline-paced 64-sample blocks at 48 kHz,
+  driver-style resync after an xrun, RT thread promoted (`SCHED_FIFO` on Linux,
+  MMCSS "Pro Audio" on Windows), and throttled same-process allocation load.
+- BenchmarkDotNet with `MemoryDiagnoser` shows `Engine.Process()` allocates zero
+  bytes per block. The soak harness reports zero bytes allocated on the RT thread.
+  This proves only that the synthetic DSP path is allocation-free, not that GC
+  pauses are tolerable.
+
+A clean run of N blocks bounds the xrun rate below about 3/N at 95% confidence
+(about 2.7 million blocks per hour). Run length therefore sets the claim: 2 hours
+supports "fewer than one xrun per 40 minutes", and 8 hours "fewer than one per
+2.7 hours".
+
+Required for the go/no-go decision (C# engine or Rust kernel fallback):
+
+- [ ] Agree pass thresholds in advance. Proposed: zero xruns over 2 hours at 70%
+      DSP load, isolated and with 200 MB/s same-process allocation.
+- [ ] Engine with 200 tracks of synthetic DSP, 64-sample buffer at 48 kHz, for
+      2 hours while other threads in the same process allocate at a fixed rate.
+      Record xruns, dropped buffers and the maximum GC pause. Sweep allocation rate
+      and live-set size to show which one drives the pause length.
 - [ ] Repeat with the engine isolated in its own process (no allocating load).
-- [ ] The same workload in Rust as a baseline.
+- [ ] The same workload in Rust as a baseline on the same host.
+
+Required before acceptance:
+
+- [ ] One 8-hour soak of the chosen configuration on desktop hardware, to catch
+      effects that only appear over hours: OS background work, thermal throttling,
+      heap fragmentation and timer drift.
 - [ ] NativeAOT on iOS and Android: check startup and that it works with the audio
       callback.
-- [ ] Agree pass thresholds in advance (for example zero xruns over 8 hours at
-      70% DSP load).
 
 ## Fitness functions
 

@@ -31,7 +31,8 @@ git fetch origin ccr-5fbb3a14-r2ucog && git checkout ccr-5fbb3a14-r2ucog
 dotnet build -c Release csharp
 cargo build --release --manifest-path rust/Cargo.toml
 ./run-matrix.sh 300                                    # full matrix, 18 runs, ~90 min
-LOADS=0.7 ALLOC_MBPS=200 ALLOC_RETAIN=256 ./run-matrix.sh 28800   # one 8 h soak per row
+LOADS=0.7 ALLOC_MBPS=200 ALLOC_RETAIN=256 ./run-matrix.sh 7200    # go/no-go: 4 rows x 2 h = 8 h
+dotnet csharp/bin/Release/net10.0/Spike.dll --seconds 28800 --load 0.7 --alloc-threads 2 --alloc-mbps 200 --alloc-retain 256   # 8 h acceptance soak, chosen config only
 dotnet run -c Release --project benchmarks -- --filter '*'        # BenchmarkDotNet, Engine.Process()
 ```
 
@@ -60,5 +61,5 @@ Rust takes `--seconds`, `--load`, `--tracks`, `--rt-priority`.
 - Container (4 shared vCPU): unusable as evidence. Hypervisor steal causes xruns even in Rust under `SCHED_FIFO`.
 - `results/20261004T024408Z-matrix.txt` (Windows desktop, before resync, throttling and MMCSS): isolated C# within
   a few xruns of Rust over 300 s; alloc rows invalid (unthrottled allocator, cascading schedule).
-- Still needed: rerun this matrix on the desktop, agree pass thresholds, 8 h soak, then update the ADR's Evidence
-  checklist. iOS/Android NativeAOT needs devices and is not covered by this harness.
+- Still needed: agree pass thresholds, rerun this matrix on the desktop, 2 h go/no-go rows, then one 8 h soak of
+  the chosen configuration (see the ADR's Evidence checklist). iOS/Android NativeAOT needs devices and is not covered by this harness.
