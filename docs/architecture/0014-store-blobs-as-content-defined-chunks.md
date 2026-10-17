@@ -78,12 +78,34 @@ format becomes harder to read without the database.
 Available:
 
 - Xia et al., "FastCDC", USENIX ATC 2016.
+- Spike: [`spikes/adr-0014-fastcdc/`](../../spikes/adr-0014-fastcdc/). A managed
+  FastCDC 2020 whose cut points match the Rust `fastcdc` crate 3.2.1 exactly (20 of
+  20 input and size combinations), plus a scanning tool that compares whole-file,
+  fixed-size and FastCDC chunking on any directory.
+- Frame alignment: restricting cut candidates to frame boundaries lowers the cut
+  probability per byte, so mean chunks grew to 2–2.3× the target. Moving each
+  content-defined cut forward to the next frame boundary keeps the mean of
+  unaligned FastCDC, and boundaries still follow whole-frame insertions and
+  removals.
+- On a synthetic library of 24-bit samples with re-tagged, trimmed, extended,
+  inserted and bounced variants, savings were:
+  - FastCDC: 66–70%
+  - fixed-size: 40%
+  - whole content: 14%
+
+  This shows the mechanism, not a realistic ratio. Gain changes and re-encoding
+  deduplicate under no strategy.
 
 Required before acceptance:
 
 - [ ] Measure the deduplication ratio on a real sample library plus projects:
-      FastCDC vs. fixed-size vs. whole-file.
-- [ ] BenchmarkDotNet: chunking throughput (managed, `ReadOnlySpan<byte>`).
+      FastCDC vs. fixed-size vs. whole-file. The tool is ready:
+      `dotnet run -c Release --project dedup -- scan <dir>`.
+- [x] BenchmarkDotNet: chunking throughput (managed, `ReadOnlySpan<byte>`).
+      On a 4-vCPU VM, chunking ran at 1.3–1.9 GB/s with or without frame
+      alignment, with zero allocation. SHA-256 ran at 0.37 GB/s on the same CPU,
+      which has no SHA extensions, so hashing, not chunking, sets the import rate
+      there. Repeat on target hardware to get real numbers.
 - [ ] Choose the target chunk size, balancing index memory against transfer
       granularity.
 - [ ] Specify the packfile layout.
