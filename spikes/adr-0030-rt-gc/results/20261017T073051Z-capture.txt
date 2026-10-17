@@ -1,0 +1,51 @@
+seconds-per-run=30 rid=linux-x64 steal_ticks_at_start=2333
+
+## capture=managed alloc-mbps=0 alloc-retain=4096
+capture=managed runtime=.NET 10.0.12 os="Ubuntu 24.04.4 LTS" alloc-threads=0 alloc-mbps=0 alloc-retain=4096 device-periods=3 ring-ms=2000
+managed rt_scheduling sched_fifo(50)=ok
+periods=22499 late_periods=54 max_late_us=52832 device_overruns=32 device_lost_samples=54848 ring_overflow_samples=0 capture_thread_alloc_bytes=0
+consumer_samples=1385088 consumer_gaps=32 consumer_missing_samples=54848 host_gc0=0 host_max_gc_pause_us=0 shim_gc0=-1 alloc_mbps_actual=0
+
+## capture=shim alloc-mbps=0 alloc-retain=4096
+capture=shim runtime=.NET 10.0.12 os="Ubuntu 24.04.4 LTS" alloc-threads=0 alloc-mbps=0 alloc-retain=4096 device-periods=3 ring-ms=2000
+shim rt_scheduling sched_fifo(50)=ok
+periods=22499 late_periods=59 max_late_us=48130 device_overruns=33 device_lost_samples=46912 ring_overflow_samples=0 capture_thread_alloc_bytes=0
+consumer_samples=1393024 consumer_gaps=33 consumer_missing_samples=46912 host_gc0=0 host_max_gc_pause_us=0 shim_gc0=0 alloc_mbps_actual=0
+
+## capture=managed alloc-mbps=200 alloc-retain=256
+capture=managed runtime=.NET 10.0.12 os="Ubuntu 24.04.4 LTS" alloc-threads=2 alloc-mbps=200 alloc-retain=256 device-periods=3 ring-ms=2000
+managed rt_scheduling sched_fifo(50)=ok
+periods=22499 late_periods=338 max_late_us=7828 device_overruns=207 device_lost_samples=14912 ring_overflow_samples=0 capture_thread_alloc_bytes=0
+consumer_samples=1425024 consumer_gaps=207 consumer_missing_samples=14912 host_gc0=351 host_max_gc_pause_us=7939 shim_gc0=-1 alloc_mbps_actual=200
+
+## capture=shim alloc-mbps=200 alloc-retain=256
+capture=shim runtime=.NET 10.0.12 os="Ubuntu 24.04.4 LTS" alloc-threads=2 alloc-mbps=200 alloc-retain=256 device-periods=3 ring-ms=2000
+shim rt_scheduling sched_fifo(50)=ok
+periods=22499 late_periods=49 max_late_us=49273 device_overruns=29 device_lost_samples=50112 ring_overflow_samples=0 capture_thread_alloc_bytes=0
+consumer_samples=1389824 consumer_gaps=29 consumer_missing_samples=50112 host_gc0=351 host_max_gc_pause_us=13418 shim_gc0=0 alloc_mbps_actual=200
+
+## capture=managed alloc-mbps=200 alloc-retain=4096
+capture=managed runtime=.NET 10.0.12 os="Ubuntu 24.04.4 LTS" alloc-threads=2 alloc-mbps=200 alloc-retain=4096 device-periods=3 ring-ms=2000
+managed rt_scheduling sched_fifo(50)=ok
+periods=22499 late_periods=312 max_late_us=25154 device_overruns=293 device_lost_samples=84736 ring_overflow_samples=0 capture_thread_alloc_bytes=0
+consumer_samples=1355200 consumer_gaps=293 consumer_missing_samples=84736 host_gc0=390 host_max_gc_pause_us=25184 shim_gc0=-1 alloc_mbps_actual=200
+
+## capture=shim alloc-mbps=200 alloc-retain=4096
+capture=shim runtime=.NET 10.0.12 os="Ubuntu 24.04.4 LTS" alloc-threads=2 alloc-mbps=200 alloc-retain=4096 device-periods=3 ring-ms=2000
+shim rt_scheduling sched_fifo(50)=ok
+periods=22499 late_periods=52 max_late_us=48743 device_overruns=29 device_lost_samples=51584 ring_overflow_samples=0 capture_thread_alloc_bytes=0
+consumer_samples=1388352 consumer_gaps=29 consumer_missing_samples=51584 host_gc0=389 host_max_gc_pause_us=20150 shim_gc0=0 alloc_mbps_actual=200
+
+## capture=managed alloc-mbps=1000 alloc-retain=4096
+capture=managed runtime=.NET 10.0.12 os="Ubuntu 24.04.4 LTS" alloc-threads=2 alloc-mbps=1000 alloc-retain=4096 device-periods=3 ring-ms=2000
+managed rt_scheduling sched_fifo(50)=ok
+periods=22499 late_periods=1488 max_late_us=99484 device_overruns=1457 device_lost_samples=452928 ring_overflow_samples=0 capture_thread_alloc_bytes=0
+consumer_samples=987008 consumer_gaps=1457 consumer_missing_samples=452928 host_gc0=1913 host_max_gc_pause_us=99670 shim_gc0=-1 alloc_mbps_actual=1000
+
+## capture=shim alloc-mbps=1000 alloc-retain=4096
+capture=shim runtime=.NET 10.0.12 os="Ubuntu 24.04.4 LTS" alloc-threads=2 alloc-mbps=1000 alloc-retain=4096 device-periods=3 ring-ms=2000
+shim rt_scheduling sched_fifo(50)=ok
+periods=22520 late_periods=50 max_late_us=48989 device_overruns=30 device_lost_samples=50688 ring_overflow_samples=0 capture_thread_alloc_bytes=0
+consumer_samples=1390592 consumer_gaps=30 consumer_missing_samples=50688 host_gc0=1919 host_max_gc_pause_us=188319 shim_gc0=0 alloc_mbps_actual=1000
+
+steal_ticks_at_end=3129

@@ -10,4 +10,7 @@
     <ServerGarbageCollector>false</ServerGarbageCollector>
     <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../shared/*.cs" LinkBase="shared" />
+  </ItemGroup>
 </Project>

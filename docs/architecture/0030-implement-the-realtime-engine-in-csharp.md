@@ -84,6 +84,18 @@ Available:
   bytes per block. The soak harness reports zero bytes allocated on the RT thread.
   This proves only that the synthetic DSP path is allocation-free, not that GC
   pauses are tolerable.
+- NativeAOT isolation test (same spike, `capture-shim/` and `capture-host/`). A C#
+  library published with NativeAOT carries its own runtime and GC heap. A simulated
+  capture thread running inside it, allocation-free and writing to a native ring,
+  kept its overruns at the no-load noise floor (29–33 in 30 s, in a VM) under up to
+  about 1,900 host GCs with pauses up to 188 ms. The same loop on a host thread rose
+  to 207, 293 and 1,457 overruns as allocation pressure increased. A large ring
+  absorbed every pause of the managed consumer.
+  - What it shows: recording capture can be kept out of the engine's GC without
+    leaving C#. The engine and monitoring path stay exposed to the GC.
+  - What it doesn't cover: driver-created callback threads, desktop hardware,
+    Android, and iOS, where the whole app is a single NativeAOT image, so there is
+    no second runtime.
 
 A clean run of N blocks bounds the xrun rate below about 3/N at 95% confidence
 (about 2.7 million blocks per hour). Run length therefore sets the claim: 2 hours

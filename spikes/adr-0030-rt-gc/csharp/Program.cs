@@ -16,7 +16,7 @@ Console.WriteLine($"runtime=.NET {Environment.Version} os=\"{RuntimeInformation.
 using var stop = new CancellationTokenSource();
 var allocated = new long[o.AllocThreads];
 var allocThreads = Enumerable.Range(0, o.AllocThreads)
-    .Select(i => new Thread(() => allocated[i] = AllocLoad(i, o.AllocMbps * 1e6 / Math.Max(1, o.AllocThreads), o.AllocRetain, stop.Token)) { IsBackground = true })
+    .Select(i => new Thread(() => allocated[i] = AllocationLoad.Run(i, o.AllocMbps * 1e6 / Math.Max(1, o.AllocThreads), o.AllocRetain, stop.Token)) { IsBackground = true })
     .ToArray();
 var allocClock = Stopwatch.StartNew();
 foreach (var t in allocThreads) t.Start();
@@ -39,32 +39,6 @@ var us = 1e6 / Stopwatch.Frequency;
 Console.WriteLine($"rt_scheduling {r.Scheduling}");
 Console.WriteLine($"blocks={r.Blocks} xruns={r.Xruns} dropped_buffers={r.DroppedBuffers} max_late_us={r.MaxLateTicks * us:F0} max_callback_us={r.MaxCallbackTicks * us:F0} p50_us={Percentile(r.Histogram, .5)} p99_us={Percentile(r.Histogram, .99)} p99.99_us={Percentile(r.Histogram, .9999)} mean_load={Mean(r.Histogram) / periodUs:P1} rt_thread_alloc_bytes={r.RtThreadAllocatedBytes}");
 Console.WriteLine($"gc0={r.Gc0} gc1={r.Gc1} gc2={r.Gc2} total_pause_ms={r.TotalPause.TotalMilliseconds:F1} gc_time_pct={r.TotalPause.TotalSeconds / o.Seconds:P1} max_gc_pause_us={gcMonitor.MaxPause.TotalMicroseconds:F0} gc_pauses_observed={gcMonitor.Collections} alloc_mbps_actual={allocated.Sum() / 1e6 / allocSeconds:F0}");
-
-static long AllocLoad(int seed, double bytesPerSecond, int retain, CancellationToken stop)
-{
-    var rng = new Random(seed);
-    var retained = new object[retain];
-    var clock = Stopwatch.StartNew();
-    long allocated = 0, i = 0;
-    while (!stop.IsCancellationRequested)
-    {
-        if (bytesPerSecond > 0 && allocated > bytesPerSecond * clock.Elapsed.TotalSeconds)
-        {
-            Thread.Sleep(1);
-            continue;
-        }
-        var size = rng.Next(256, 64 * 1024);
-        retained[i++ % retained.Length] = new byte[size];
-        allocated += size;
-        if ((i & 63) == 0)
-        {
-            var length = rng.Next(10, 5000);
-            retained[rng.Next(retained.Length)] = new string('x', length).Split('x');
-            allocated += length * 2L + length * 8L;
-        }
-    }
-    return allocated;
-}
 
 static RunResult RunRealTime(Options o, Engine engine, double periodTicks)
 {
@@ -135,47 +109,5 @@ static class EnumerableExtensions
     {
         var acc = seed;
         foreach (var x in source) yield return acc = step(acc, x);
-    }
-}
-
-sealed class GcPauseMonitor : IDisposable
-{
-    readonly CancellationTokenSource _stop = new();
-    readonly Thread _thread;
-    long _lastIndex;
-    long _seen;
-    TimeSpan _max;
-
-    public GcPauseMonitor()
-    {
-        _lastIndex = GC.GetGCMemoryInfo(GCKind.Any).Index;
-        _thread = new Thread(Poll) { IsBackground = true };
-        _thread.Start();
-    }
-
-    public long Collections => Interlocked.Read(ref _seen);
-    public TimeSpan MaxPause => _max;
-
-    void Poll()
-    {
-        while (!_stop.IsCancellationRequested)
-        {
-            var info = GC.GetGCMemoryInfo(GCKind.Any);
-            if (info.Index != _lastIndex)
-            {
-                _seen += info.Index - _lastIndex;
-                _lastIndex = info.Index;
-                var pause = info.PauseDurations.ToArray().Aggregate(TimeSpan.Zero, (a, b) => a + b);
-                if (pause > _max) _max = pause;
-            }
-            Thread.Sleep(1);
-        }
-    }
-
-    public void Dispose()
-    {
-        _stop.Cancel();
-        _thread.Join();
-        _stop.Dispose();
     }
 }

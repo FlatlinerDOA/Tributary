@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PublishAot>true</PublishAot>
+    <NativeLib>Shared</NativeLib>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <AssemblyName>capture_shim</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../shared/CaptureLoop.cs" Link="shared/CaptureLoop.cs" />
+    <Compile Include="../shared/Scheduling.cs" Link="shared/Scheduling.cs" />
+  </ItemGroup>
+</Project>

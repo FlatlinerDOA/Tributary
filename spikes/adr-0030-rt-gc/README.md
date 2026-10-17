@@ -56,10 +56,39 @@ Rust takes `--seconds`, `--load`, `--tracks`, `--rt-priority`.
 - `steal_ticks_*` (Linux only) is hypervisor steal; any increase means the host is virtualised and results are noisy.
 - Benchmarks: `Allocated` must be `-` (zero) for every row; `Mean` per block divided by 1333 µs is the DSP load.
 
+## NativeAOT capture isolation test
+
+Question: can a capture thread written in C# be kept out of reach of the engine process's GC?
+`capture-shim/` is a C# library published with NativeAOT as a native shared library; it carries its own runtime
+and GC heap. It exports `capture_start`, which starts a thread in the shim's runtime that simulates a capture
+device: each 1.333 ms period it delivers 64 sequence-numbered samples into a lock-free ring in native memory.
+The device holds `--device-periods` periods (default 3); a capture thread later than that loses samples, as an
+overrun would on hardware. `capture-host/` is an ordinary JIT-compiled process that loads the shim, runs the same
+allocation load as the soak harness, and drains the ring from a managed consumer thread that checks every
+sequence number. `--capture managed` runs the identical loop on a host thread instead, as the control.
+
+```
+./run-capture.sh 300      # builds the shim for this OS/arch with NativeAOT, writes results/<utc>-capture.txt
+```
+
+NativeAOT prerequisites: Linux needs clang and zlib development headers; Windows needs the Visual Studio
+"Desktop development with C++" workload; macOS needs Xcode command-line tools.
+
+Reading the output: `device_overruns` / `device_lost_samples` are samples the capture thread lost;
+`consumer_gaps` / `consumer_missing_samples` must equal them (the ring itself lost nothing if
+`ring_overflow_samples=0`). `shim_gc0` must stay 0: the shim is only isolated while it never allocates.
+Compare each `shim` row with the no-allocation row: equal overruns mean the host GC did not reach the shim thread.
+
+Not covered: a capture thread created by an audio driver and calling into the shim (here the shim creates the
+thread), iOS (the whole app is one NativeAOT image, so there is no second runtime), and Android.
+
 ## Status for ADR-0030 Evidence
 
 - Container (4 shared vCPU): unusable as evidence. Hypervisor steal causes xruns even in Rust under `SCHED_FIFO`.
 - `results/20261004T024408Z-matrix.txt` (Windows desktop, before resync, throttling and MMCSS): isolated C# within
   a few xruns of Rust over 300 s; alloc rows invalid (unthrottled allocator, cascading schedule).
+- `results/20261017T073051Z-capture.txt` (container, 30 s per row): shim capture overruns stayed at the
+  no-allocation floor (29–33) under up to ~1,900 host GCs with pauses up to 188 ms; the same loop on a host
+  thread went from 32 to 207, 293 and 1,457 as allocation pressure rose. `shim_gc0=0` throughout.
 - Still needed: agree pass thresholds, rerun this matrix on the desktop, 2 h go/no-go rows, then one 8 h soak of
   the chosen configuration (see the ADR's Evidence checklist). iOS/Android NativeAOT needs devices and is not covered by this harness.
